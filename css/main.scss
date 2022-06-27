@@ -1,0 +1,166 @@
+// Include custom variables default override
+
+$primary : #78187f;
+$gray : #E6E6E6;
+
+$theme-colors: (
+    "primary": $primary,
+    "gray": $gray
+);
+
+// create our own map
+
+$custom-colors: (
+    "icon-background": #e6adeb
+);
+
+// merge map
+
+$theme-colors: map-merge($theme-colors , $custom-colors);
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "./bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+/* ***************** HEADER ******************** */
+
+.announcement-bar {
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--bs-gray);
+
+    &__list{
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: inline-flex;
+        margin: 0 -10px;
+
+        li {
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+
+            .bi {
+                background-color: var(--bs-icon-background);
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                margin-right: 6px;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}
+
+.site-header {
+
+    .aws-search-field {
+        font-size: 0.9rem;
+        border-radius: 20px!important;
+        padding-left: 1.4rem;
+    }
+
+    .custom-logo {
+        width: auto;
+        height: 50px;
+    }
+}
+
+/* Main Menu */
+
+.main-navigation {
+    font-weight: 500;
+
+    .current_page_item {
+        background-color: #93409b;
+    }
+
+    a {
+        color: var(--bs-white);
+        padding: 0.6rem 1.4rem;
+    }
+
+    a:hover{
+        background-color: #93409b;
+    }
+
+}
+
+.menu-toggle {
+    background-color: $primary;
+    border: none;
+    color: white;
+}
+
+/* ******* Glassification ******* */
+.glassified {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ************* Front Page *************** */
+
+/* *********** Slider Control ************* */
+.carousel {
+    .carousel-control-prev, .carousel-control-next {
+        width: 9%;
+    }
+}
+
+
+
+
+
+
+/* --------------- footer style ------------- */
+
+/* COOKIES NOTICE */
+#cookie-notice{
+    color:#fff;
+    font-family:inherit;
+    background:#596cd5;
+    padding:20px;
+    position:fixed;
+    bottom:10px;
+    left:10px;
+    width:100%;
+    max-width:300px;
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+    border-radius:5px;
+    margin:0px;
+    visibility:hidden;
+    z-index:1000000;
+    box-sizing:border-box;
+
+    button {
+        color:inherit;
+        background:#3842c7;
+        border:0;
+        padding:10px;
+        margin-top:10px;
+        width:100%;
+        cursor:pointer;
+    }
+
+    @include media-breakpoint-down(lg) {
+        max-width:100%;
+        bottom:0;
+        left:0;
+        border-radius:0;
+    }
+}
