@@ -35,13 +35,17 @@ query_posts(array(
 						<a href="#"><?php the_post_thumbnail( 'full', array('class' => 'd-block w-100')) ?></a>
 
 						<?php
-						$is_value = esc_html( get_post_meta( $post->ID, 'show_slide_details', true ) );
-						if($is_value == "yes") {
+						$visibility = esc_html( get_post_meta( $post->ID, '_cta_section_visibility', true ) );
+						if($visibility == "yes") {
+							$button_text = esc_html( get_post_meta( $post->ID, '_cta_text_field', true ) );
+							if($button_text == "") { $button_text = "Click me"; }
+							$button_link = esc_html( get_post_meta( $post->ID, '_cta_actionable_link', true ) );
+							if($button_link == "") { $button_link = "#"; }
 						?>
 							<div class="carousel-caption d-none d-md-block text-start glassified p-4 w-50">
 								<h5><?php the_title(); ?></h5>
 								<p><?php the_content(); ?></p>
-								<button class="btn btn-primary">Click me</button>
+								<button class="btn btn-primary" onclick="window.location.href='<?php echo $button_link; ?>'"><?php echo $button_text; ?></button>
 							</div>
 						<?php
 						}
@@ -72,12 +76,12 @@ query_posts(array(
 		<section class="container loader-section odd-section">
 
 			<div class="row d-flex justify-content-center">
-				<h3 class="text-center pt-5">Section 1</h3>
-				<p class="w-50 pb-4 text-center">Description for section 1 demo lengthy sentences</p>
+				<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_1_title') ) ?></h3>
+				<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_1_description') ) ?></p>
 			</div>
 
 			<?php
-				echo do_shortcode(' [products limit="4" columns="4" visibility="featured" ] ');
+				echo do_shortcode( get_option('section_1_shortcode') );
 			?>
 
 		</section>
@@ -88,12 +92,12 @@ query_posts(array(
 			<div class="container">
 
 				<div class="row d-flex justify-content-center">
-					<h3 class="text-center pt-5">Section 2</h3>
-					<p class="w-50 pb-4 text-center">Description for section 2 demo lengthy sentences</p>
+					<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_2_title') ) ?></h3>
+					<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_2_description') ) ?></p>
 				</div>
 
 				<?php
-					echo do_shortcode(' [products limit="4" columns="4" visibility="featured" ] ');
+					echo do_shortcode( get_option('section_2_shortcode') );
 				?>
 			
 			</div>
@@ -104,12 +108,12 @@ query_posts(array(
 		<section class="container loader-section odd-section">
 
 			<div class="row d-flex justify-content-center">
-				<h3 class="text-center pt-5">Section 3</h3>
-				<p class="w-50 pb-4 text-center">Description for section 3 demo lengthy sentences</p>
+				<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_3_title') ) ?></h3>
+				<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_3_description') ) ?></p>
 			</div>
 
 			<?php
-				echo do_shortcode(' [products limit="4" columns="4" visibility="featured" ] ');
+				echo do_shortcode( get_option('section_3_shortcode') );
 			?>
 
 		</section>
@@ -120,12 +124,12 @@ query_posts(array(
 			<div class="container">
 
 				<div class="row d-flex justify-content-center">
-					<h3 class="text-center pt-5">Section 4</h3>
-					<p class="w-50 pb-4 text-center">Description for section 4 demo lengthy sentences</p>
+					<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_4_title') ) ?></h3>
+					<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_4_description') ) ?></p>
 				</div>
 
 				<?php
-					echo do_shortcode(' [products limit="4" columns="4" visibility="featured" ] ');
+					echo do_shortcode( get_option('section_4_shortcode') );
 				?>
 			
 			</div>
@@ -136,12 +140,12 @@ query_posts(array(
 		<section class="container loader-section odd-section">
 
 			<div class="row d-flex justify-content-center">
-				<h3 class="text-center pt-5">Section 5</h3>
-				<p class="w-50 pb-4 text-center">Description for section 5 demo lengthy sentences</p>
+				<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_5_title') ) ?></h3>
+				<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_5_description') ) ?></p>
 			</div>
 
 			<?php
-				echo do_shortcode(' [products limit="4" columns="4" visibility="featured" ] ');
+				echo do_shortcode( get_option('section_5_shortcode') );
 			?>
 
 		</section>
@@ -152,12 +156,12 @@ query_posts(array(
 			<div class="container">
 
 				<div class="row d-flex justify-content-center">
-					<h3 class="text-center pt-5">Section 6</h3>
-					<p class="w-50 pb-4 text-center">Description for section 6 demo lengthy sentences</p>
+					<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_6_title') ) ?></h3>
+					<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_6_description') ) ?></p>
 				</div>
 
 				<?php
-					echo do_shortcode(' [products limit="4" columns="4" visibility="featured" ] ');
+					echo do_shortcode( get_option('section_6_shortcode') );
 				?>
 			
 			</div>

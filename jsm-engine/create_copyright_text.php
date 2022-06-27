@@ -24,3 +24,8 @@ function jsm_generate_copyright_text(){
 	
 }
 add_shortcode( 'copyright-text', 'jsm_generate_copyright_text' );
+
+function create_jsm_credit(){
+	return 'Developed by&nbsp;<a class="text-decoration-none" href="https://jsmedia7.in" target="_blank">JSMedia7</a>';
+}
+add_shortcode( 'jsm-credit', 'create_jsm_credit' );

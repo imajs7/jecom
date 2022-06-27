@@ -49,7 +49,7 @@ add_shortcode('jsm-show-bills', 'fetch_bills_from_jsmedia7');
 // Register a custom menu page.
 function jsm_register_custom_dashboard_page(){
     add_menu_page( 
-        __( 'JSM Dashboard', 'textdomain' ),
+        __( 'JSM Dashboard', 'jsm-dashboard' ),
         'JSMedia7',
         'upload_files',
         'jsmedia7',
@@ -70,8 +70,8 @@ function jsm_dashboard_page_html(){
 function jsm_register_set_client_page() {
     add_submenu_page(
         'jsmedia7',
-        __( 'JSMedia7 - Web Solutions | Client Settings', 'textdomain' ),
-        __( 'JSM Client', 'textdomain' ),
+        __( 'Client Settings', 'jsm-dashboard' ),
+        __( 'JSM Client', 'jsm-dashboard' ),
         'edit_jsm',
         'jsmedia7-client',
         'client_page_callback'

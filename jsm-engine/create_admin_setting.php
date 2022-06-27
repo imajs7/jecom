@@ -7,12 +7,13 @@ function admin_settings_create_menu() {
 
 	//create new top-level menu
 	add_menu_page(
-        'Admin Settings', 
+        __( 'Admin Settings', 'admin-settings' ),
         'Admin Settings', 
         'manage_options', 
         __FILE__, 
         'admin_settings_page', 
-        "dashicons-admin-network"
+        "dashicons-admin-network",
+        4
     );
 
 	//call register settings function

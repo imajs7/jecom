@@ -1,36 +1,73 @@
 <?php
 
-/* ----------- Show slide details meta box ---------- */
-function slide_details_visibility_metabox() {
-    add_meta_box( 'show_slide_details', 'Show slide details?', 'display_slide_details_meta_box', 'slide', 'side' );
-}
-add_action( 'admin_init', 'slide_details_visibility_metabox' );
+/* --------- Call to action button ---------- */
 
-function display_slide_details_meta_box( $slide ) {
-	$is_value = esc_html( get_post_meta( $slide->ID, 'show_slide_details', true ) );
-	$checked;
-	if ( $is_value == "yes" ) { $checked = "checked"; } 
-	else if ( $is_value == "no" ) { $checked = ""; } 
-	else { $checked="";}
-    ?>
-    <span class="title">Show details?</span>
-    <span class="content">
-        <label for="details_checkbox">
-            <input type="checkbox" name="details_checkbox" id="details_checkbox" value="yes" <?php echo $checked; ?> />
-        </label>
-    </span> 
+function call_to_action_metabox_mutiple_fields(){
  
-    <?php
+    add_meta_box(
+            'cta-metabox-multiple-fields',
+            'Call to action button',
+            'add_cta_fileds',
+            'slide',
+            'normal'
+        );
+}
+ 
+add_action('add_meta_boxes', 'call_to_action_metabox_mutiple_fields');
+
+function add_cta_fileds(){
+ 
+    global $post;
+ 
+    // Get Value of Fields From Database
+    $cta_section_visibility = get_post_meta( $post->ID, '_cta_section_visibility', true);
+    $cta_text_field = get_post_meta( $post->ID, '_cta_text_field', true);
+    $cta_actionable_link = get_post_meta( $post->ID, '_cta_actionable_link', true);
+     
+?>
+     
+<div class="row">
+    <div class="label">Show call to action panel?</div>
+    <div class="fields">
+        <label><input type="radio" name="_cta_section_visibility" value="yes" <?php if($cta_section_visibility == 'yes') echo 'checked'; ?> /> Yes </label>
+        <label><input type="radio" name="_cta_section_visibility" value="no"  <?php if($cta_section_visibility == 'no') echo 'checked'; ?> /> No </label>
+    </div>
+</div>
+
+<br/><br/>
+
+<div class="row">
+    <div class="label">Button text</div>
+    <div class="fields"><input type="text" name="_cta_text_field" value="<?php echo $cta_text_field; ?>" /></div>
+</div>
+ 
+<br/>
+ 
+<div class="row">
+    <div class="label">Button actionable link</div>
+    <div class="fields"><input type="text" name="_cta_actionable_link" value="<?php echo $cta_actionable_link; ?>" /></div>
+</div>
+ 
+ 
+<?php    
 }
 
-function update_slide_details_box( $post_id ) {
-    if( !current_user_can( 'edit_post' ) ) return;
-    if ( 'slide' == get_post_type() ) {
-        if ( isset( $_POST['details_checkbox'] ) && $_POST['details_checkbox'] != '' ) {
-            update_post_meta( $post_id, 'show_slide_details', $_POST['details_checkbox'] );
-        }else {
-            update_post_meta( $post_id, 'show_slide_details', "no" );
-        }
-    }
+function save_cta_fields_metabox(){
+ 
+    global $post;
+ 
+    if(isset($_POST["_cta_section_visibility"])) :
+    update_post_meta($post->ID, '_cta_section_visibility', $_POST["_cta_section_visibility"]);
+    endif;
+ 
+    if(isset($_POST["_cta_text_field"])) :
+    update_post_meta($post->ID, '_cta_text_field', $_POST["_cta_text_field"]);
+    endif;
+
+    if(isset($_POST["_cta_actionable_link"])) :
+    update_post_meta($post->ID, '_cta_actionable_link', $_POST["_cta_actionable_link"]);
+    endif;
+ 
 }
-add_action( 'save_post', 'update_slide_details_box' );
+ 
+add_action('save_post', 'save_cta_fields_metabox');

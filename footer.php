@@ -22,8 +22,7 @@
 				</div>
 
 				<div class="col-md-6 d-flex justify-content-center justify-content-md-end">
-					Developed by&nbsp;
-					<a class="text-decoration-none" href="https://jsmedia7.in" target="_blank">JSMedia7</a>
+					<?php echo do_shortcode( ' [jsm-credit] ' ); ?>
 				</div>
 
 			</div>

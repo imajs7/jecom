@@ -31,6 +31,9 @@ require "jsm-engine/create_slides_metabox.php";
 /* ----------- ADDING NEW OPTION PAGE ----------------- */
 require "jsm-engine/create_admin_setting.php";
 
+/* ----------- ADDING NEW OPTION PAGE ----------------- */
+require "jsm-engine/create_homepage.php";
+
 /* ----------- Wordpress cleanup ----------------- */
 require "jsm-engine/wordpress_cleanup.php";
 
