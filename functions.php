@@ -53,13 +53,7 @@ function jcom_setup() {
 	register_nav_menus(
 		array(
 			'primary' => 'Primary menu',
-			'secondary' => 'Secondary menu',
-			'tertiary-1' => 'Tertiary menu 1',
-			'tertiary-2' => 'Tertiary menu 2',
-			'tertiary-3' => 'Tertiary menu 3',
-			'tertiary-4' => 'Tertiary menu 4',
-			'tertiary-5' => 'Tertiary menu 5',
-			'tertiary-6' => 'Tertiary menu 6',
+			'secondary' => 'Secondary menu'
 		)
 	);
 
@@ -175,6 +169,10 @@ function enqueue_custom_fonts() {
 	if( ! is_admin() ){
 		wp_register_style('Roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,300&display=swap');
 		wp_enqueue_style( 'Roboto' );
+
+		wp_register_style('Poppins', 'https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:ital,wght@0,100;0,500;1,300&display=swap');
+		wp_enqueue_style( 'Poppins' );
+
 	}
 
 }
@@ -238,3 +236,104 @@ function add_class_to_custom_logo( $html ) {
 	return $html;
 }
 add_filter('get_custom_logo', 'add_class_to_custom_logo', 10);
+
+/**
+ *  Remove the category count for WooCommerce categories
+ */
+add_filter( 'woocommerce_subcategory_count_html', '__return_null' );
+
+/** 
+ * Add woocomerce theme support 
+ * */
+function jecom_add_woocommerce_support() {
+	add_theme_support( 'woocommerce', array(
+		'thumbnail_image_width' => 150,
+		'single_image_width'    => 300,
+
+        'product_grid'          => array(
+            'default_rows'    => 3,
+            'min_rows'        => 2,
+            'max_rows'        => 8,
+            'default_columns' => 4,
+            'min_columns'     => 2,
+            'max_columns'     => 5,
+        ),
+	) );
+}
+add_action( 'after_setup_theme', 'jecom_add_woocommerce_support' );
+
+/**
+ * removing woocommerce styles
+ */
+
+add_filter( 'woocommerce_enqueue_styles', 'remove_woocommerce_styles' );
+function remove_woocommerce_styles( $enqueue_styles ) {
+	unset( $enqueue_styles['woocommerce-general'] );
+	//unset( $enqueue_styles['woocommerce-layout'] );
+	//unset( $enqueue_styles['woocommerce-smallscreen'] );
+
+	return $enqueue_styles;
+}
+
+/**
+ * adding woocommerce styles
+ */
+
+function enqueue_woo_style() {
+	
+	wp_enqueue_style( 'jecom-woo-styles', get_template_directory_uri() . "/css/woocommerce/woocommerce.css" );
+
+	if ( class_exists('woocommerce') ) {
+		wp_enqueue_style( 'jecom-woo-styles' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_woo_style' );
+
+/** -------------------- added to cart button text change --------------------- */
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'bbloomer_custom_add_cart_button_single_product', 9999 );
+ 
+function bbloomer_custom_add_cart_button_single_product( $label ) {
+   if ( WC()->cart && ! WC()->cart->is_empty() ) {
+      foreach( WC()->cart->get_cart() as $cart_item_key => $values ) {
+         $product = $values['data'];
+         if ( get_the_ID() == $product->get_id() ) {
+            $label = 'Already in Cart. Add again?';
+            break;
+         }
+      }
+   }
+   return $label;
+}
+ 
+// Part 2
+// Loop Pages Add to Cart
+ 
+add_filter( 'woocommerce_product_add_to_cart_text', 'bbloomer_custom_add_cart_button_loop', 9999, 2 );
+ 
+function bbloomer_custom_add_cart_button_loop( $label, $product ) {
+   if ( $product->get_type() == 'simple' && $product->is_purchasable() && $product->is_in_stock() ) {
+      if ( WC()->cart && ! WC()->cart->is_empty() ) {
+         foreach( WC()->cart->get_cart() as $cart_item_key => $values ) {
+            $_product = $values['data'];
+            if ( get_the_ID() == $_product->get_id() ) {
+               $label = 'Already in Cart. Add again?';
+               break;
+            }
+         }
+      }
+   }
+   return $label;
+}
+
+/** --------- order again ------------ */
+add_filter( 'woocommerce_my_account_my_orders_actions', 'bbloomer_order_again_action', 9999, 2 );
+    
+function bbloomer_order_again_action( $actions, $order ) {
+    if ( $order->has_status( 'completed' ) ) {
+        $actions['order-again'] = array(
+            'url' => wp_nonce_url( add_query_arg( 'order_again', $order->get_id(), wc_get_cart_url() ), 'woocommerce-order_again' ),
+            'name' => __( 'Order again', 'woocommerce' ),
+        );
+    }
+    return $actions;
+}

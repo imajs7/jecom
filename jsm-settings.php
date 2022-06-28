@@ -34,14 +34,14 @@ require "jsm-engine/create_admin_setting.php";
 /* ----------- ADDING NEW OPTION PAGE ----------------- */
 require "jsm-engine/create_homepage.php";
 
+/* ----------- Create custom widgets ----------------- */
+require "jsm-engine/create_custom_widgets.php";
+
 /* ----------- Wordpress cleanup ----------------- */
 require "jsm-engine/wordpress_cleanup.php";
 
 /* -------------------- Create Billing Section ---------------------- */
 require "jsm-engine/create_billing_section.php";
-
-/* ----------------- copyright text generate ----------------- */
-require "jsm-engine/create_copyright_text.php";
 
 /* ----------------- manage nonce ------------------ */
 require "jsm-engine/manage_nonce.php";

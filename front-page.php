@@ -72,12 +72,31 @@ query_posts(array(
 
 		</section>
 
+		<!-- Category Grid -->
+		<?php if( get_option('category_section_enable') ) {?>
+		<section class="container category-section">
+
+			<div class="row d-flex justify-content-center mb-5">
+				<h3 class="text-center pt-5"><?php echo esc_attr( get_option('category_section_title') ) ?></h3>
+			</div>
+
+			<?php
+
+				$ids = get_option('category_section_ids');
+				echo do_shortcode( '[product_categories orderby="include" columns="3" ids="' . $ids . '"]' );
+
+			?>
+
+		</section>
+		<?php } ?>
+
 		<!-- Dynamic Section 1 -->
-		<section class="container loader-section odd-section">
+		<?php if( get_option('section_1_enable') ) {?>
+		<section class="container loader-section">
 
 			<div class="row d-flex justify-content-center">
 				<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_1_title') ) ?></h3>
-				<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_1_description') ) ?></p>
+				<p class="w-75 w-md-50 pb-4 text-center"><?php echo esc_attr( get_option('section_1_description') ) ?></p>
 			</div>
 
 			<?php
@@ -85,15 +104,17 @@ query_posts(array(
 			?>
 
 		</section>
+		<?php } ?>
 
 		<!-- Dynamic Section 2 -->
-		<section class="loader-section even-section bg-gray">
+		<?php if( get_option('section_2_enable') ) {?>
+		<section class="loader-section section-bg-color">
 
 			<div class="container">
 
 				<div class="row d-flex justify-content-center">
 					<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_2_title') ) ?></h3>
-					<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_2_description') ) ?></p>
+					<p class="w-75 w-md-50 pb-4 text-center"><?php echo esc_attr( get_option('section_2_description') ) ?></p>
 				</div>
 
 				<?php
@@ -103,13 +124,15 @@ query_posts(array(
 			</div>
 
 		</section>
+		<?php } ?>
 
 		<!-- Dynamic Section 3 -->
-		<section class="container loader-section odd-section">
+		<?php if( get_option('section_3_enable') ) {?>
+		<section class="container loader-section">
 
 			<div class="row d-flex justify-content-center">
 				<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_3_title') ) ?></h3>
-				<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_3_description') ) ?></p>
+				<p class="w-75 w-md-50 pb-4 text-center"><?php echo esc_attr( get_option('section_3_description') ) ?></p>
 			</div>
 
 			<?php
@@ -117,15 +140,17 @@ query_posts(array(
 			?>
 
 		</section>
+		<?php } ?>
 
 		<!-- Dynamic Section 4 -->
-		<section class="loader-section even-section bg-gray">
+		<?php if( get_option('section_4_enable') ) {?>
+		<section class="loader-section section-bg-color">
 
 			<div class="container">
 
 				<div class="row d-flex justify-content-center">
 					<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_4_title') ) ?></h3>
-					<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_4_description') ) ?></p>
+					<p class="w-75 w-md-50 pb-4 text-center"><?php echo esc_attr( get_option('section_4_description') ) ?></p>
 				</div>
 
 				<?php
@@ -135,13 +160,15 @@ query_posts(array(
 			</div>
 
 		</section>
+		<?php } ?>
 
 		<!-- Dynamic Section 5 -->
-		<section class="container loader-section odd-section">
+		<?php if( get_option('section_5_enable') ) {?>
+		<section class="container loader-section">
 
 			<div class="row d-flex justify-content-center">
 				<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_5_title') ) ?></h3>
-				<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_5_description') ) ?></p>
+				<p class="w-75 w-md-50 pb-4 text-center"><?php echo esc_attr( get_option('section_5_description') ) ?></p>
 			</div>
 
 			<?php
@@ -149,15 +176,17 @@ query_posts(array(
 			?>
 
 		</section>
+		<?php } ?>
 
 		<!-- Dynamic Section 6 -->
-		<section class="loader-section even-section bg-gray">
+		<?php if( get_option('section_6_enable') ) {?>
+		<section class="loader-section section-bg-color">
 
 			<div class="container">
 
 				<div class="row d-flex justify-content-center">
 					<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_6_title') ) ?></h3>
-					<p class="w-50 pb-4 text-center"><?php echo esc_attr( get_option('section_6_description') ) ?></p>
+					<p class="w-75 w-md-50 pb-4 text-center"><?php echo esc_attr( get_option('section_6_description') ) ?></p>
 				</div>
 
 				<?php
@@ -167,6 +196,7 @@ query_posts(array(
 			</div>
 
 		</section>
+		<?php } ?>
 
 	</main>
 

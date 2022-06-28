@@ -1,10 +1,15 @@
 // Include custom variables default override
 
 $primary : #78187f;
+$primary-opacity-8 : rgba(120, 24, 127, 0.8);
 $gray : #E6E6E6;
+
+$headings-fonts-family: 'Roboto', sans-serif;
+$font-family-base: 'Poppins', sans-serif;
 
 $theme-colors: (
     "primary": $primary,
+    "primary-opacity-8": $primary-opacity-8,
     "gray": $gray
 );
 
@@ -23,6 +28,9 @@ $theme-colors: map-merge($theme-colors , $custom-colors);
 @import "./bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
+
+/* ------------------- Global --------------------- */
+
 
 /* ***************** HEADER ******************** */
 
@@ -75,12 +83,25 @@ $theme-colors: map-merge($theme-colors , $custom-colors);
         width: auto;
         height: 50px;
     }
+
+    .cart-count-label {
+        font-size: 12px;
+        background: $primary;
+        color: #fff;
+        padding: 0 2px 0 5px;
+        vertical-align: middle;
+        top: -10px;
+        left: -10px;
+        border-radius: 100%;
+        position: relative;
+    }
 }
 
 /* Main Menu */
 
 .main-navigation {
     font-weight: 500;
+    font-size: 14px;
 
     .current_page_item {
         background-color: #93409b;
@@ -89,10 +110,17 @@ $theme-colors: map-merge($theme-colors , $custom-colors);
     a {
         color: var(--bs-white);
         padding: 0.6rem 1.4rem;
+        text-transform: uppercase;
     }
 
     a:hover{
         background-color: #93409b;
+    }
+
+    .sub-menu {
+        li {
+            background-color: $primary;
+        }
     }
 
 }
@@ -113,21 +141,117 @@ $theme-colors: map-merge($theme-colors , $custom-colors);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* ************* Front Page *************** */
+/* -------- Box shadow -------- */
+.shadowed-box {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
 
 /* *********** Slider Control ************* */
 .carousel {
+
+    @extend .shadowed-box;
+
     .carousel-control-prev, .carousel-control-next {
         width: 9%;
     }
 }
 
+/* ---------------- Category Section --------------- */
+.category-section {
+    .woocommerce {
+        ul {
+            li.product-category {
 
+                h2 {
+                    background-color: $primary;
+                    color: $gray;
+                    line-height: 3rem;
 
+                    mark {
+                        background: transparent;
+                        color: inherit;
+                    }
+                }
 
+                h2:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
 
+.section-bg-color {
+    background-color: #fafafa;
+}
 
-/* --------------- footer style ------------- */
+/* ***************** Simple Pages ************* */
+.entry-header {
+    .entry-title {
+        font-size: 16px;
+        text-transform: uppercase;
+        color: $primary;
+    }
+}
+
+/* ------------- Woo pages --------------------- */
+.badge {
+    --f: 10px; /* control the folded part*/
+    --r: 15px; /* control the ribbon shape */
+    --t: 10px; /* the top offset */
+    
+    position: absolute;
+    inset: var(--t) calc(-1*var(--f)) auto auto;
+    padding: 0 10px var(--f) calc(10px + var(--r));
+    clip-path: 
+      polygon(0 0,100% 0,100% calc(100% - var(--f)),calc(100% - var(--f)) 100%,
+        calc(100% - var(--f)) calc(100% - var(--f)),0 calc(100% - var(--f)),
+        var(--r) calc(50% - var(--f)/2));
+    background: $primary;
+    color: white;
+    font-size: 12px;
+    box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
+  }
+
+  .place-order, .payment_methods {
+    background-color: #e6adeb;
+  }
+
+  .coupon input#coupon_code {
+    min-width: 200px;
+  }
+/* ***************** FOOTER ******************** */
+
+.site-footer {
+
+    h3 {
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    .menu {
+
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.3rem 0;
+            font-size: 14px;
+        }
+
+        a:hover {
+            color: #e6adeb;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
 
 /* COOKIES NOTICE */
 #cookie-notice{
