@@ -9,7 +9,7 @@ function admin_settings_create_menu() {
 	add_menu_page(
         __( 'Admin Settings', 'admin-settings' ),
         'Admin Settings', 
-        'manage_options', 
+        'manage_woocommerce', 
         __FILE__, 
         'admin_settings_page', 
         "dashicons-admin-network",

@@ -9,7 +9,7 @@ function build_homepage_create_menu() {
 	add_menu_page(
         __( 'Build Homepage', 'build-homepage' ),
         'Build Homepage', 
-        'manage_options', 
+        'manage_woocommerce', 
         __FILE__, 
         'build_homepage_page', 
         "dashicons-admin-home",

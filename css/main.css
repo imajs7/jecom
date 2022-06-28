@@ -11566,6 +11566,11 @@ textarea.form-control-lg {
   }
 }
 /* ------------------- Global --------------------- */
+img.custom-logo {
+  max-height: 50px;
+  width: auto;
+}
+
 /* ***************** HEADER ******************** */
 .announcement-bar {
   font-size: 0.8rem;

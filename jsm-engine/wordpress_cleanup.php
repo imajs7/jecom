@@ -23,15 +23,15 @@ function hide_menu() {
 		
 		remove_menu_page( 'plugins.php' ); //Plugins
 		
-		remove_menu_page( 'edit.php?post_type=page' ); // Pages
+		//remove_menu_page( 'edit.php?post_type=page' ); // Pages
 		
-		remove_menu_page( 'themes.php' ); // Appearance
+		//remove_menu_page( 'themes.php' ); // Appearance
 		remove_submenu_page( 'themes.php', 'themes.php' ); // hide the theme selection submenu
 		remove_submenu_page('themes.php', 'theme-editor.php'); // hide Theme editor
 		
 		remove_submenu_page('options-general.php', 'antispam_bee');
-		remove_submenu_page( 'woocommerce', 'wc-admin' );
-		remove_submenu_page( 'woocommerce', 'wcz_settings' );
+		//remove_submenu_page( 'woocommerce', 'wc-admin' );
+		//remove_submenu_page( 'woocommerce', 'wcz_settings' );
 		remove_submenu_page( 'woocommerce', 'wc-addons' );
 		
 		//Hide "Marketing".

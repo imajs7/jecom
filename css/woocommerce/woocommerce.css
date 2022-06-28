@@ -766,11 +766,10 @@ p.demo_store a,
 .woocommerce nav.woocommerce-pagination ul li span {
   margin: 0;
   text-decoration: none;
-  padding: 0;
+  padding: 0.8em;
   line-height: 1;
   font-size: 1em;
   font-weight: normal;
-  padding: 0.5em;
   min-width: 1em;
   display: block;
 }
@@ -778,7 +777,7 @@ p.demo_store a,
 .woocommerce nav.woocommerce-pagination ul li a:hover,
 .woocommerce nav.woocommerce-pagination ul li a:focus {
   background: rgb(127, 24, 127);
-  color: black;
+  color: white;
 }
 .woocommerce a.button,
 .woocommerce button.button,

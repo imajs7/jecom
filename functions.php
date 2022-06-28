@@ -145,7 +145,7 @@ function jcom_scripts() {
 	wp_enqueue_style( 'jcom-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'jcom-main', get_template_directory_uri() . "/css/main.css" );
 	wp_enqueue_style( 'bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" );
-
+	
 	wp_style_add_data( 'jcom-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'jcom-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -336,4 +336,22 @@ function bbloomer_order_again_action( $actions, $order ) {
         );
     }
     return $actions;
+}
+
+/**
+ * Remove Sale Badge on single page
+ */
+
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+
+/**
+ * trim lengthy product title
+ */
+add_filter( 'the_title', 'bbloomer_shorten_woo_product_title', 9999, 2 );
+function bbloomer_shorten_woo_product_title( $title, $id ) {
+   if ( is_shop() && get_post_type( $id ) === 'product' ) {
+      return substr( $title, 0, 27 ) . "..."; // last number = characters
+   } else {
+      return $title;
+   }
 }

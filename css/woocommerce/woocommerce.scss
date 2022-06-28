@@ -563,6 +563,7 @@ p.demo_store,
 				overflow: hidden;
 				border-radius: 10px 10px 0 0;
 			}
+			
 		}
 
 		li.type-product {
@@ -682,11 +683,10 @@ p.demo_store,
 				span {
 					margin: 0;
 					text-decoration: none;
-					padding: 0;
+					padding: 0.8em;
 					line-height: 1;
 					font-size: 1em;
 					font-weight: normal;
-					padding: 0.5em;
 					min-width: 1em;
 					display: block;
 				}
@@ -695,7 +695,7 @@ p.demo_store,
 				a:hover,
 				a:focus {
 					background: $secondary;
-					color: darken($secondary, 40%);
+					color: white;
 				}
 			}
 		}

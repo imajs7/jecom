@@ -30,7 +30,10 @@ $theme-colors: map-merge($theme-colors , $custom-colors);
 // Then add additional custom code here
 
 /* ------------------- Global --------------------- */
-
+img.custom-logo{
+    max-height: 50px;
+    width: auto;
+}
 
 /* ***************** HEADER ******************** */
 
@@ -253,6 +256,7 @@ $theme-colors: map-merge($theme-colors , $custom-colors);
             font-size: 14px;
         }
     }
+
 }
 
 /* COOKIES NOTICE */

@@ -15,24 +15,26 @@ function fetch_bills_from_jsmedia7() {
 
 		$invoices = json_decode( $response['body'] ); // our posts are here
 
+		$count = 1;
 		foreach( $invoices as $invoice ) {
 			if ( $invoice->acf->client_name == $client_id && $invoice->acf->project_address == $project_id ) {	
 				
-				$pay_btn = '&emsp;<a target="_blank" class="jsm-pay-now-btn" href="' . $invoice->link . '">Pay Now</a>';
+				$pay_btn = '&emsp;<a style="text-decoration: none" target="_blank" href="' . $invoice->link . '">Pay Now</a>';
 
 				switch ( $invoice->acf->status ) {
 				  case 1:
 					$invoice_status = "<span style='color: red'>Partially Paid</span>";
-					$unpaid_invoice_str = $unpaid_invoice_str . '<p>Invoice Number: <a href="' . $invoice->link . '" target="_blank">' . $invoice->title->rendered . '</a> - Dated: ' . date( "F j, Y h:m a", strtotime( $invoice->date ) ) . ' [ ' . $invoice_status . ' ]' . $pay_btn . '</p>';
+					$unpaid_invoice_str = $unpaid_invoice_str . '<p>' . $count . '. Invoice Number: <a href="' . $invoice->link . '" target="_blank" style="text-decoration: none">' . $invoice->title->rendered . '</a> - Dated: ' . date( "F j, Y h:m a", strtotime( $invoice->date ) ) . ' [ ' . $invoice_status . ' ]' . $pay_btn . '</p>';
 					break;
 				  case 2:
 					$invoice_status = "<span style='color: #999999'>Fully Paid</span>";
-					$paid_invoice_str = $paid_invoice_str . '<p>Invoice Number: <a href="' . $invoice->link . '" target="_blank">' . $invoice->title->rendered . '</a> - Dated: ' . date( "F j, Y h:m a", strtotime( $invoice->date ) ) . ' [ ' . $invoice_status . ' ]</p>';
+					$paid_invoice_str = $paid_invoice_str . '<p>' . $count . '. Invoice Number: <a href="' . $invoice->link . '" target="_blank" style="text-decoration: none">' . $invoice->title->rendered . '</a> - Dated: ' . date( "F j, Y h:m a", strtotime( $invoice->date ) ) . ' [ ' . $invoice_status . ' ]</p>';
 					break;
 				  default:
 					$invoice_status = "<span style='color: red'>Unpaid</span>";
-					$unpaid_invoice_str = $unpaid_invoice_str . '<p>Invoice Number: <a href="' . $invoice->link . '" target="_blank">' . $invoice->title->rendered . '</a> - Dated: ' . date( "F j, Y h:m a", strtotime( $invoice->date ) ) . ' [ ' . $invoice_status . ' ]' . $pay_btn . '</p>';		
+					$unpaid_invoice_str = $unpaid_invoice_str . '<p>' . $count . '. Invoice Number: <a href="' . $invoice->link . '" target="_blank" style="text-decoration: none">' . $invoice->title->rendered . '</a> - Dated: ' . date( "F j, Y h:m a", strtotime( $invoice->date ) ) . ' [ ' . $invoice_status . ' ]' . $pay_btn . '</p>';		
 				}
+				$count++;
 			}
 		}
 		
@@ -49,12 +51,12 @@ add_shortcode('jsm-show-bills', 'fetch_bills_from_jsmedia7');
 // Register a custom menu page.
 function jsm_register_custom_dashboard_page(){
     add_menu_page( 
-        __( 'JSM Dashboard', 'jsm-dashboard' ),
+        __( 'JSM Dashboard', 'textdomain' ),
         'JSMedia7',
         'upload_files',
         'jsmedia7',
         'jsm_dashboard_page_html',
-        'dashicons-cover-image',
+        'dashicons-info',
         3
     ); 
 }
@@ -70,8 +72,8 @@ function jsm_dashboard_page_html(){
 function jsm_register_set_client_page() {
     add_submenu_page(
         'jsmedia7',
-        __( 'Client Settings', 'jsm-dashboard' ),
-        __( 'JSM Client', 'jsm-dashboard' ),
+        __( 'JSMedia7 - Web Solutions | Client Settings', 'textdomain' ),
+        __( 'JSM Client', 'textdomain' ),
         'edit_jsm',
         'jsmedia7-client',
         'client_page_callback'
@@ -147,11 +149,11 @@ function jsm_client_settings_cb(){
 function jsm_client_page_html() {
 	?>
 	<form method="POST" action="options.php">
-		<?php
-			settings_fields( 'jsmedia7-client' );
-			do_settings_sections( 'jsmedia7-client' );
-			submit_button();
-		?>
+    <?php
+    settings_fields( 'jsmedia7-client' );
+    do_settings_sections( 'jsmedia7-client' );
+    submit_button();
+    ?>
     </form>
 	<?php
 }

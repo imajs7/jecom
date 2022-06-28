@@ -21,6 +21,17 @@ add_action( 'wp_enqueue_scripts', 'load_dashicons_front_end' );
 function load_dashicons_front_end() {
 	wp_enqueue_style( 'dashicons' );
 }
+ 
+// Modify capability for option pages
+function add_capability_for_admin_page( $capability ) {
+    return 'manage_woocommerce';
+}
+add_filter( 'option_page_capability_admin-settings-group', 'add_capability_for_admin_page' );
+
+function add_capability_for_build_homepage( $capability ) {
+    return 'manage_woocommerce';
+}
+add_filter( 'option_page_capability_build-homepage-group', 'add_capability_for_build_homepage' );
 
 /* ------ Custom Slide Custom Post type ----------- */
 require "jsm-engine/create_slides_cpt.php";
@@ -55,11 +66,11 @@ function update_footer_admin () {
 }    
 add_filter('admin_footer_text', 'update_footer_admin');
 
-/* -------------- Add Nav Menu Admin Link -------------- */
-function add_menus_to_admin() {
-    add_menu_page( 'add_menus_to_admin', 'Menus', 'read', '/nav-menus.php', '', 'dashicons-menu', 10 );
+/* -------------- Add Coupon to Nav Menu Admin -------------- */
+function add_coupons_to_admin() {
+    add_menu_page( 'add_coupons_to_admin', 'Coupons', 'read', '/edit.php?post_type=shop_coupon', '', 'dashicons-tickets', 10 );
 }
-add_action( 'admin_menu', 'add_menus_to_admin' );
+add_action( 'admin_menu', 'add_coupons_to_admin' );
 
 /* ------------------ hide admin bar frontend -------------------- */
 add_action('after_setup_theme', 'remove_admin_bar');
@@ -83,7 +94,7 @@ function custom_loginlogo() {
 	$logo_file_id = get_theme_mod( 'custom_logo' );
 	$image = wp_get_attachment_image_src( $logo_file_id , 'full' );
 	if($image[0] == '') {
-		$image[0] = plugins_url('jsm-settings/assets/logo-black.png');
+		$image[0] = "https://jsmedia7.in/wp-content/uploads/2021/12/logo-black.png";
 		$width = 200;
 		$height = 70;
 	} else {
