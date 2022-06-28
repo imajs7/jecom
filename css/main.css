@@ -11669,6 +11669,9 @@ textarea.form-control-lg {
 }
 
 /* ---------------- Category Section --------------- */
+.category-section .woocommerce ul li.product-category {
+  overflow: hidden;
+}
 .category-section .woocommerce ul li.product-category h2, .category-section .woocommerce ul li.product-category .h2 {
   background-color: #78187f;
   color: #E6E6E6;

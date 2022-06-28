@@ -162,6 +162,8 @@ $theme-colors: map-merge($theme-colors , $custom-colors);
         ul {
             li.product-category {
 
+                overflow: hidden;
+
                 h2 {
                     background-color: $primary;
                     color: $gray;

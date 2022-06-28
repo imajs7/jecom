@@ -48,5 +48,4 @@
 .policy-text ol:not(.privacy-policy-tutorial):not(.wp-policy-help) + ul:not(.privacy-policy-tutorial):not(.wp-policy-help),
 .policy-text ol:not(.privacy-policy-tutorial):not(.wp-policy-help) + ol:not(.privacy-policy-tutorial):not(.wp-policy-help) {
   padding-top: 0;
-}
-/*# sourceMappingURL=privacy.css.map */
+}/*# sourceMappingURL=privacy.css.map */

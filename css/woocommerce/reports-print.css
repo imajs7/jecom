@@ -6,19 +6,16 @@
   background: transparent !important;
   color: black !important;
   text-shadow: none !important;
-  -webkit-filter: none !important;
-          filter: none !important;
+  filter: none !important;
   -ms-filter: none !important;
   font-size: 9pt !important;
   opacity: 1;
-  -webkit-transition: none !important;
   transition: none !important;
 }
 
 @page {
   margin: 0.5cm;
 }
-
 #adminmenuwrap,
 #adminmenuback,
 #wpadminbar,
@@ -69,8 +66,6 @@ h2 .nav-tab {
 .chart-legend li,
 .chart-legend li {
   padding: 0.25em 0.5em !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
   border-bottom: 1px solid gray !important;
-}
-/*# sourceMappingURL=reports-print.css.map */
+}/*# sourceMappingURL=reports-print.css.map */
