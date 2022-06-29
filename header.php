@@ -36,11 +36,15 @@
 					<ul class="announcement-bar__list">
 						<li>
 						<i class="bi bi-telephone rounded-circle"></i>
-						<a href="tel:+919999999999">+91 999 999 9999</a>
+						<a href="tel:<?php echo do_shortcode( get_option('business_contact') );?>">
+							<?php echo do_shortcode( get_option('business_contact') );?>
+						</a>
 						</li>
 						<li>
 						<i class="bi bi-envelope rounded-circle"></i>
-						<a href="mailto:info@jsmedia7.in">info@jsmedia7.in</a>
+						<a href="mailto:<?php echo do_shortcode( get_option('business_email') );?>">
+							<?php echo do_shortcode( get_option('business_email') );?>
+						</a>
 						</li>
 					</ul>
 
@@ -50,16 +54,16 @@
 
 					<ul class="announcement-bar__list">
 						<li>
-							<i class="bi bi-truck rounded-circle"></i>
-							<a href="#">Free shipping above ₹999</a>
+							<i class="<?php echo do_shortcode( get_option('info_field_1_icon') );?> rounded-circle"></i>
+							<a href="#"><?php echo do_shortcode( get_option('info_field_1_text') );?></a>
 						</li>
 						<li>
-							<i class="bi bi-clock-history rounded-circle"></i>
-							<a href="#">7 Days Money Back</a>
+							<i class="<?php echo do_shortcode( get_option('info_field_2_icon') );?> rounded-circle"></i>
+							<a href="#"><?php echo do_shortcode( get_option('info_field_2_text') );?></a>
 						</li>
 						<li>
-							<i class="bi bi-person rounded-circle"></i>
-							<a href="#">24/7 Customer support</a>
+							<i class="<?php echo do_shortcode( get_option('info_field_3_icon') );?> rounded-circle"></i>
+							<a href="#"><?php echo do_shortcode( get_option('info_field_3_text') );?></a>
 						</li>
 					</ul>
 
