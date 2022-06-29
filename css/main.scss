@@ -30,6 +30,11 @@ $theme-colors: map-merge($theme-colors , $custom-colors);
 // Then add additional custom code here
 
 /* ------------------- Global --------------------- */
+html, body {
+    margin: 0;
+    padding: 0%;
+}
+
 img.custom-logo{
     max-height: 50px;
     width: auto;
@@ -257,6 +262,30 @@ img.custom-logo{
         }
     }
 
+}
+
+ul#secondary-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+    li {
+        display: inline-block;
+        padding: 10px;
+
+        a {
+            color: #8f8f8f;
+            text-decoration: none;
+        }
+
+        a:hover  {
+            color: #333;
+        }
+    }
 }
 
 /* COOKIES NOTICE */

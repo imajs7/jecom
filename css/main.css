@@ -11566,6 +11566,11 @@ textarea.form-control-lg {
   }
 }
 /* ------------------- Global --------------------- */
+html, body {
+  margin: 0;
+  padding: 0%;
+}
+
 img.custom-logo {
   max-height: 50px;
   width: auto;
@@ -11750,6 +11755,27 @@ img.custom-logo {
 }
 .site-footer .menu p {
   font-size: 14px;
+}
+
+ul#secondary-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+ul#secondary-menu li {
+  display: inline-block;
+  padding: 10px;
+}
+ul#secondary-menu li a {
+  color: #8f8f8f;
+  text-decoration: none;
+}
+ul#secondary-menu li a:hover {
+  color: #333;
 }
 
 /* COOKIES NOTICE */

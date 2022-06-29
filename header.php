@@ -36,14 +36,14 @@
 					<ul class="announcement-bar__list">
 						<li>
 						<i class="bi bi-telephone rounded-circle"></i>
-						<a href="tel:<?php echo do_shortcode( get_option('business_contact') );?>">
-							<?php echo do_shortcode( get_option('business_contact') );?>
+						<a href="tel:<?php echo get_option('business_contact');?>">
+							<?php echo get_option('business_contact');?>
 						</a>
 						</li>
 						<li>
 						<i class="bi bi-envelope rounded-circle"></i>
-						<a href="mailto:<?php echo do_shortcode( get_option('business_email') );?>">
-							<?php echo do_shortcode( get_option('business_email') );?>
+						<a href="mailto:<?php echo get_option('business_email');?>">
+							<?php echo get_option('business_email');?>
 						</a>
 						</li>
 					</ul>
@@ -54,16 +54,16 @@
 
 					<ul class="announcement-bar__list">
 						<li>
-							<i class="<?php echo do_shortcode( get_option('info_field_1_icon') );?> rounded-circle"></i>
-							<a href="#"><?php echo do_shortcode( get_option('info_field_1_text') );?></a>
+							<i class="<?php echo get_option('info_field_1_icon');?> rounded-circle"></i>
+							<a href="#"><?php echo get_option('info_field_1_text');?></a>
 						</li>
 						<li>
-							<i class="<?php echo do_shortcode( get_option('info_field_2_icon') );?> rounded-circle"></i>
-							<a href="#"><?php echo do_shortcode( get_option('info_field_2_text') );?></a>
+							<i class="<?php echo get_option('info_field_2_icon');?> rounded-circle"></i>
+							<a href="#"><?php echo get_option('info_field_2_text');?></a>
 						</li>
 						<li>
-							<i class="<?php echo do_shortcode( get_option('info_field_3_icon') );?> rounded-circle"></i>
-							<a href="#"><?php echo do_shortcode( get_option('info_field_3_text') );?></a>
+							<i class="<?php echo get_option('info_field_3_icon');?> rounded-circle"></i>
+							<a href="#"><?php echo get_option('info_field_3_text');?></a>
 						</li>
 					</ul>
 

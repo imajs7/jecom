@@ -25,6 +25,7 @@ function register_admin_settings() {
 	//register our settings
 	register_setting( 'admin-settings-group', 'business_email' );
 	register_setting( 'admin-settings-group', 'business_contact' );
+    register_setting( 'admin-settings-group', 'business_intro' );
 
     register_setting( 'admin-settings-group', 'info_field_1_icon' );
     register_setting( 'admin-settings-group', 'info_field_2_icon' );
@@ -59,6 +60,11 @@ function admin_settings_page() {
         <tr valign="top">
         <th scope="row">Business Contact</th>
         <td><input type="text" name="business_contact" value="<?php echo esc_attr( get_option('business_contact') ); ?>" /></td>
+        </tr>
+
+        <tr valign="top">
+        <th scope="row">Short Intro to Business</th>
+        <td><textarea style="min-width: 400px" name="business_intro"><?php echo esc_attr( get_option('business_intro') ); ?></textarea></td>
         </tr>
 
         <hr />
