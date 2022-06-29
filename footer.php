@@ -48,31 +48,20 @@
 			<?php the_custom_logo(); ?>
 		</div>
 
-		<div class="text-center mt-4">
-			<p style="margin: 0 auto;max-width: 500px"><?php echo get_option('business_intro');?></p>
+		<div class="w-50 text-center mx-auto mt-4">
+			<p><?php echo get_option('business_intro');?></p>
 		</div>
 
-		<div class="social">
-			<nav class="navbar navbar-expand-sm justify-content-center">
-				<!-- Links -->
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="bi bi-instagram"></i></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="bi bi-whatsapp"></i></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="bi bi-twitter"></i></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="bi bi-envelope"></i></a>
-					</li>
-				</ul>
-			</nav>
+		<div class="social text-center">
+
+			<ul class="social-network social-circle">
+				<li><a href="#" class="icoFacebook" title="Facebook"><i class="bi bi-facebook"></i></a></li>
+				<li><a href="#" class="icoInstagram" title="Instagram"><i class="bi bi-instagram"></i></a></li>
+				<li><a href="#" class="icoWhatsapp" title="WhatsApp"><i class="bi bi-whatsapp"></i></a></li>
+				<li><a href="#" class="icoTwitter" title="Twitter"><i class="bi bi-twitter"></i></a></li>
+				<li><a href="#" class="icoEmail" title="Email"><i class="bi bi-envelope"></i></a></li>
+			</ul>
+
 		</div>
 
 	  	<?php

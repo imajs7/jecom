@@ -11757,6 +11757,69 @@ img.custom-logo {
   font-size: 14px;
 }
 
+.social ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  padding: 0;
+}
+.social ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+.social .social-network a.icoEmail:hover {
+  background-color: #F56505;
+}
+.social .social-network a.icoFacebook:hover {
+  background-color: #3B5998;
+}
+.social .social-network a.icoTwitter:hover {
+  background-color: #33ccff;
+}
+.social .social-network a.icoInstagram:hover {
+  background-color: #C13584;
+}
+.social .social-network a.icoWhatsapp:hover {
+  background-color: #2BB741;
+}
+.social .social-network a.icoLinkedin:hover {
+  background-color: #007bb7;
+}
+.social .social-network a.icoEmail:hover i, .social .social-network a.icoFacebook:hover i, .social .social-network a.icoTwitter:hover i,
+.social .social-network a.icoWhatsapp:hover i, .social .social-network a.icoInstagram:hover i, .social .social-network a.icoLinkedin:hover i {
+  color: #fff;
+}
+.social a.socialIcon:hover, .social .socialHoverClass {
+  color: #44BCDD;
+}
+.social .social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  border-radius: 50%;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #D3D3D3;
+}
+.social .social-circle li i {
+  margin: 0;
+  line-height: 40px;
+  text-align: center;
+}
+.social .social-circle li a:hover i, .social .triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  transition: all 0.2s;
+}
+.social .social-circle i {
+  color: #fff;
+  transition: all 0.8s;
+}
+
 ul#secondary-menu {
   list-style-type: none;
   margin: 0;
