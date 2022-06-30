@@ -79,8 +79,9 @@ function admin_settings_page() {
             <h4>Info Field 1 Text</h4>
             <input type="text" name="info_field_1_text" value="<?php echo esc_attr( get_option('info_field_1_text') ); ?>" />
         </div>
-
-        <br/><br/>
+    
+    </div>
+    <div class="row">
 
         <div class="col">
             <h4>Info Field 2 Icon</h4>
@@ -90,6 +91,9 @@ function admin_settings_page() {
             <h4>Info Field 2 Text</h4>
             <input type="text" name="info_field_2_text" value="<?php echo esc_attr( get_option('info_field_2_text') ); ?>" />
         </div>
+    
+    </div>
+    <div class="row">
 
         <div class="col">
             <h4>Info Field 3 Icon</h4>
