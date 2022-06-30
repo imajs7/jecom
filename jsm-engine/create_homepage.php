@@ -217,7 +217,7 @@ function build_homepage_page() {
         border: 1px solid #999;
         border-radius: 10px;
     }
-    input{
+    input[type=text]{
         min-width: 50%;
     }
 </style>
