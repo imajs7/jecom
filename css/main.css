@@ -44,7 +44,7 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Poppins, sans-serif;
+  --bs-body-font-family: Montserrat, sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -3534,7 +3534,7 @@ textarea.form-control-lg {
   opacity: 1;
 }
 
-.dropdown-item {
+.dropdown-item, .main-navigation .sub-menu li {
   display: block;
   width: 100%;
   padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
@@ -3547,16 +3547,16 @@ textarea.form-control-lg {
   background-color: transparent;
   border: 0;
 }
-.dropdown-item:hover, .dropdown-item:focus {
+.dropdown-item:hover, .main-navigation .sub-menu li:hover, .dropdown-item:focus, .main-navigation .sub-menu li:focus {
   color: var(--bs-dropdown-link-hover-color);
   background-color: var(--bs-dropdown-link-hover-bg);
 }
-.dropdown-item.active, .dropdown-item:active {
+.dropdown-item.active, .main-navigation .sub-menu li.active, .dropdown-item:active, .main-navigation .sub-menu li:active {
   color: var(--bs-dropdown-link-active-color);
   text-decoration: none;
   background-color: var(--bs-dropdown-link-active-bg);
 }
-.dropdown-item.disabled, .dropdown-item:disabled {
+.dropdown-item.disabled, .main-navigation .sub-menu li.disabled, .dropdown-item:disabled, .main-navigation .sub-menu li:disabled {
   color: var(--bs-dropdown-link-disabled-color);
   pointer-events: none;
   background-color: transparent;
@@ -5550,7 +5550,7 @@ textarea.form-control-lg {
   display: block;
   padding: var(--bs-tooltip-arrow-height);
   margin: var(--bs-tooltip-margin);
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5660,7 +5660,7 @@ textarea.form-control-lg {
   z-index: var(--bs-popover-zindex);
   display: block;
   max-width: var(--bs-popover-max-width);
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -11604,6 +11604,10 @@ img.custom-logo {
 }
 .announcement-bar__list li a {
   text-decoration: none;
+  color: #000000;
+}
+.announcement-bar__list li a:hover {
+  color: #444;
 }
 @media (max-width: 991.98px) {
   .announcement-bar {
@@ -11633,7 +11637,7 @@ img.custom-logo {
   display: inline-block;
 }
 .site-header .jsm-site-logo .logo-image img, .site-footer .jsm-site-logo .logo-image img {
-  max-width: 100px;
+  max-width: 75px;
   height: auto;
   border: 2px solid #000000;
   padding: 1px;
@@ -11696,12 +11700,12 @@ img.custom-logo {
 
 /* ******* Glassification ******* */
 .glassified {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 /* -------- Box shadow -------- */

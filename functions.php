@@ -170,8 +170,8 @@ function enqueue_custom_fonts() {
 		wp_register_style('Roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,300&display=swap');
 		wp_enqueue_style( 'Roboto' );
 
-		wp_register_style('Poppins', 'https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-		wp_enqueue_style( 'Poppins' );
+		wp_register_style('Montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+		wp_enqueue_style( 'Montserrat' );
 
 		wp_register_style('Montez', 'https://fonts.googleapis.com/css2?family=Montez&display=swap');
 		wp_enqueue_style( 'Montez' );
@@ -352,7 +352,7 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
  */
 add_filter( 'the_title', 'bbloomer_shorten_woo_product_title', 9999, 2 );
 function bbloomer_shorten_woo_product_title( $title, $id ) {
-   if ( is_shop() && get_post_type( $id ) === 'product' ) {
+   if ( get_post_type( $id ) === 'product' && strlen($title) > 27 ) {
       return substr( $title, 0, 27 ) . "..."; // last number = characters
    } else {
       return $title;
