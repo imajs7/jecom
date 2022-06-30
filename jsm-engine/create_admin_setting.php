@@ -36,7 +36,8 @@ function register_admin_settings() {
     register_setting( 'admin-settings-group', 'info_field_3_text' );
 
     register_setting( 'admin-settings-group', 'business_facebook' );
-
+    register_setting( 'admin-settings-group', 'business_instagram' );
+    register_setting( 'admin-settings-group', 'business_twitter' );
 
 }
 
@@ -48,59 +49,74 @@ function admin_settings_page() {
 <form method="post" action="options.php">
     <?php settings_fields( 'admin-settings-group' ); ?>
     <?php do_settings_sections( 'admin-settings-group' ); ?>
-    <table class="form-table">
+
+    <div class="row">
 
         <h3>Business Info</h3>
+        <div class="col">
+            <h4>Business Email</h4>
+            <input type="text" name="business_email" value="<?php echo esc_attr( get_option('business_email') ); ?>" />
+        </div>
+        <div class="col">
+            <h4>Business Contact</h4>
+            <input type="text" name="business_contact" value="<?php echo esc_attr( get_option('business_contact') ); ?>" />
+        </div>
+        <div class="col">
+            <h4>Business Intro</h4>
+            <textarea style="min-width: 400px" name="business_intro"><?php echo esc_attr( get_option('business_intro') ); ?></textarea>
+        </div>
 
-        <tr valign="top">
-        <th scope="row">Business Email</th>
-        <td><input type="text" name="business_email" value="<?php echo esc_attr( get_option('business_email') ); ?>" /></td>
-        </tr>
-         
-        <tr valign="top">
-        <th scope="row">Business Contact</th>
-        <td><input type="text" name="business_contact" value="<?php echo esc_attr( get_option('business_contact') ); ?>" /></td>
-        </tr>
+    </div>
 
-        <tr valign="top">
-        <th scope="row">Short Intro to Business</th>
-        <td><textarea style="min-width: 400px" name="business_intro"><?php echo esc_attr( get_option('business_intro') ); ?></textarea></td>
-        </tr>
+    <div class="row">
 
-        <hr />
         <h3>Top Bar Info</h3>
 
-        <tr valign="top">
-        <th scope="row">Info Field 1 Icon</th>
-        <td><input type="text" name="info_field_1_icon" value="<?php echo esc_attr( get_option('info_field_1_icon') ); ?>" /></td>
-        <th scope="row">Info Field 1 Text</th>
-        <td><input type="text" name="info_field_1_text" value="<?php echo esc_attr( get_option('info_field_1_text') ); ?>" /></td>
-        </tr>
+        <div class="col">
+            <h4>Info Field 1 Icon</h4>
+            <input type="text" name="info_field_1_icon" value="<?php echo esc_attr( get_option('info_field_1_icon') ); ?>" />
+        </div>
+        <div class="col">
+            <h4>Info Field 1 Text</h4>
+            <input type="text" name="info_field_1_text" value="<?php echo esc_attr( get_option('info_field_1_text') ); ?>" />
+        </div>
 
-        <tr valign="top">
-        <th scope="row">Info Field 2 Icon</th>
-        <td><input type="text" name="info_field_2_icon" value="<?php echo esc_attr( get_option('info_field_2_icon') ); ?>" /></td>
-        <th scope="row">Info Field 2 Text</th>
-        <td><input type="text" name="info_field_2_text" value="<?php echo esc_attr( get_option('info_field_2_text') ); ?>" /></td>
-        </tr>
+        <br/><br/>
 
-        <tr valign="top">
-        <th scope="row">Info Field 3 Icon</th>
-        <td><input type="text" name="info_field_3_icon" value="<?php echo esc_attr( get_option('info_field_3_icon') ); ?>" /></td>
-        <th scope="row">Info Field 3 Text</th>
-        <td><input type="text" name="info_field_3_text" value="<?php echo esc_attr( get_option('info_field_3_text') ); ?>" /></td>
-        </tr>
+        <div class="col">
+            <h4>Info Field 2 Icon</h4>
+            <input type="text" name="info_field_2_icon" value="<?php echo esc_attr( get_option('info_field_2_icon') ); ?>" />
+        </div>
+        <div class="col">
+            <h4>Info Field 2 Text</h4>
+            <input type="text" name="info_field_2_text" value="<?php echo esc_attr( get_option('info_field_2_text') ); ?>" />
+        </div>
 
+        <div class="col">
+            <h4>Info Field 3 Icon</h4>
+            <input type="text" name="info_field_3_icon" value="<?php echo esc_attr( get_option('info_field_3_icon') ); ?>" />
+        </div>
+        <div class="col">
+            <h4>Info Field 3 Text</h4>
+            <input type="text" name="info_field_3_text" value="<?php echo esc_attr( get_option('info_field_3_text') ); ?>" />
+        </div>
 
-        <hr />
         <h3>Social Media Info</h3>
 
-        <tr valign="top">
-        <th scope="row">Facebook Page</th>
-        <td><input type="text" name="business_facebook" value="<?php echo esc_attr( get_option('business_facebook') ); ?>" /></td>
-        </tr>
+        <div class="col">
+            <h4>Facebook Page</h4>
+            <input type="text" name="business_facebook" value="<?php echo esc_attr( get_option('business_facebook') ); ?>" />
+        </div>
+        <div class="col">
+            <h4>Instagram Page</h4>
+            <input type="text" name="business_instagram" value="<?php echo esc_attr( get_option('business_instagram') ); ?>" />
+        </div>
+        <div class="col">
+            <h4>Twitter Handle</h4>
+            <input type="text" name="business_twitter" value="<?php echo esc_attr( get_option('business_twitter') ); ?>" />
+        </div>
 
-    </table>
+    </div>
     
     <?php submit_button(); ?>
 
