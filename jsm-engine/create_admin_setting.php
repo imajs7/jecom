@@ -50,9 +50,9 @@ function admin_settings_page() {
     <?php settings_fields( 'admin-settings-group' ); ?>
     <?php do_settings_sections( 'admin-settings-group' ); ?>
 
+    <h3>Business Info</h3>
     <div class="row">
 
-        <h3>Business Info</h3>
         <div class="col">
             <h4>Business Email</h4>
             <input type="text" name="business_email" value="<?php echo esc_attr( get_option('business_email') ); ?>" />
@@ -68,9 +68,8 @@ function admin_settings_page() {
 
     </div>
 
+    <h3>Top Bar Info</h3>
     <div class="row">
-
-        <h3>Top Bar Info</h3>
 
         <div class="col">
             <h4>Info Field 1 Icon</h4>
@@ -101,7 +100,10 @@ function admin_settings_page() {
             <input type="text" name="info_field_3_text" value="<?php echo esc_attr( get_option('info_field_3_text') ); ?>" />
         </div>
 
-        <h3>Social Media Info</h3>
+    </div>
+
+    <h3>Social Media Info</h3>
+    <div class="row">
 
         <div class="col">
             <h4>Facebook Page</h4>
@@ -128,6 +130,7 @@ function admin_settings_page() {
     }
     .col{
         display: inline-block;
+        margin: 20px;
     }
 </style>
 <?php 
