@@ -122,5 +122,13 @@ function admin_settings_page() {
 
 </form>
 </div>
+<style>
+    .row{
+        display: flex;
+    }
+    .col{
+        display: inline-block;
+    }
+</style>
 <?php 
 }
