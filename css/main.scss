@@ -87,11 +87,6 @@ img.custom-logo{
         padding-left: 1.4rem;
     }
 
-    .custom-logo {
-        width: auto;
-        height: 50px;
-    }
-
     .cart-count-label {
         font-size: 12px;
         background: $primary;
@@ -103,6 +98,66 @@ img.custom-logo{
         border-radius: 100%;
         position: relative;
     }
+
+}
+
+/* LOGO STYLING */
+
+.site-header, .site-footer {
+
+    .jsm-site-logo{
+
+        .logo-image {
+
+            display: inline-block;
+
+            img {
+                max-width: 100px;
+                height: auto;
+                border: 2px solid #000000;
+                padding: 1px;
+            }
+
+        }
+
+        .logo-text {
+
+            display: inline-block;
+            position: relative;
+            transform: translateY(15%);
+
+            .site-title {
+                font-family: 'Roboto', sans-serif;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 500px;
+                letter-spacing: 2px;
+
+                a {
+                    color: #333;
+                    text-decoration: none!important;
+
+                    &:hover {
+                        color: #111;
+                    }
+                }
+                
+            }
+
+            .site-tagline {
+                font-family: 'montez', sans-serif;
+                letter-spacing: 0.15rem;
+                font-weight: 500;
+            }
+
+        }
+
+        @include media-breakpoint-down(md) {
+            margin: 10px 0;
+        }
+
+    }
+
 }
 
 /* Main Menu */

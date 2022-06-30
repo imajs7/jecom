@@ -87,7 +87,10 @@
 				</div>
 
 				<div class="col site-header__logo d-flex justify-content-center">
-					<?php the_custom_logo(); ?>
+					<?php 
+						//the_custom_logo(); 
+						include "template-parts/logo-structure.php";
+					?>
 				</div>
 
 				<div class="col-md-3 cart d-flex justify-content-end align-items-center">

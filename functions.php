@@ -170,8 +170,11 @@ function enqueue_custom_fonts() {
 		wp_register_style('Roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,300&display=swap');
 		wp_enqueue_style( 'Roboto' );
 
-		wp_register_style('Poppins', 'https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:ital,wght@0,100;0,500;1,300&display=swap');
+		wp_register_style('Poppins', 'https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 		wp_enqueue_style( 'Poppins' );
+
+		wp_register_style('Montez', 'https://fonts.googleapis.com/css2?family=Montez&display=swap');
+		wp_enqueue_style( 'Montez' );
 
 	}
 

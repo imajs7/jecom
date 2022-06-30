@@ -41,11 +41,14 @@
 </div>
 
 
-<footer class="py-3 my-4">
+<footer class="site-footer py-3 my-4">
   	<div class="container justify-content-center">
 
-		<div class="text-center">
-			<?php the_custom_logo(); ?>
+		<div class="d-flex justify-content-center">
+			<?php 
+				//the_custom_logo(); 
+				include "template-parts/logo-structure.php";
+			?>
 		</div>
 
 		<div class="w-50 text-center mx-auto mt-4">
