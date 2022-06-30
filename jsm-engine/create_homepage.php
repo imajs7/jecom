@@ -211,7 +211,7 @@ function build_homepage_page() {
 </form>
 </div>
 <style>
-    .row{
+    td{
         margin: 5px;
         padding: 20px;
         border: 1px solid #999;
