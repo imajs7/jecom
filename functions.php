@@ -372,7 +372,7 @@ function redirect_login_page() {
 		exit;
 	}
 }
-add_action('init','redirect_login_page');
+//add_action('init','redirect_login_page');
 
 /** Error handling on new login page */
 function login_failed() {
@@ -389,7 +389,7 @@ function login_failed() {
 		  exit;
 	  }
   }
-  add_filter( 'authenticate', 'verify_username_password', 1, 3);
+  //add_filter( 'authenticate', 'verify_username_password', 1, 3);
 
   /** Logout redirect */
   function logout_page() {
@@ -397,4 +397,4 @@ function login_failed() {
 	wp_redirect( $login_page . "?login=false" );
 	exit;
   }
-  add_action('wp_logout','logout_page');
+  //add_action('wp_logout','logout_page');
