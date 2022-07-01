@@ -14,7 +14,7 @@
 
 <div class="bg-primary text-white py-5">
 
-	<div class="container site-footer">
+	<div class="container before-footer-menu-panel">
 
 		<div class="row d-flex">
 
@@ -42,6 +42,7 @@
 
 
 <footer class="site-footer py-3 my-4">
+
   	<div class="container justify-content-center">
 
 		<div class="d-flex justify-content-center">
@@ -51,13 +52,13 @@
 			?>
 		</div>
 
-		<div class="w-50 text-center mx-auto mt-4">
+		<div class="site-intro">
 			<p><?php echo get_option('business_intro');?></p>
 		</div>
 
-		<div class="social text-center">
+		<div class="social-media">
 
-			<ul class="social-network social-circle">
+			<ul class="social-network">
 				<li><a href="#" class="icoFacebook" title="Facebook"><i class="bi bi-facebook"></i></a></li>
 				<li><a href="#" class="icoInstagram" title="Instagram"><i class="bi bi-instagram"></i></a></li>
 				<li><a href="#" class="icoWhatsapp" title="WhatsApp"><i class="bi bi-whatsapp"></i></a></li>
@@ -73,6 +74,7 @@
 					'theme_location' => 'secondary',
 					'menu_id'        => 'secondary-menu',
 					'container'		 => false,
+					'menu_class'	 => 'footer-menu',
 				)
 			);
 		?>

@@ -3,14 +3,12 @@ $('.carousel').carousel({
 });
 
 
-<script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function(){
-        /////// Prevent closing from click inside dropdown
-        document.querySelectorAll('.dropdown-menu').forEach(function(element){
-        	element.addEventListener('click', function (e) {
-        		e.stopPropagation();
-        	});
-        })
-    }); 
-	// DOMContentLoaded  end
-</script>
+
+
+document.addEventListener('click',function(e){
+  // Hamburger menu
+  if(e.target.classList.contains('hamburger-toggle')){
+    e.target.children[0].classList.toggle('active');
+  }
+}) ; 
+    

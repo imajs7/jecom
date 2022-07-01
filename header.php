@@ -103,38 +103,29 @@
 
 		</div>
 
-		<nav id="site-navigation" class="main-navigation bg-primary">
-			
-			<div class="container d-flex justify-content-center">
+		<nav class="navbar navbar-dark bg-primary navbar-expand-md" role="navigation">
 
-				<div class="row">
+			<div class="container">
+				
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-					<div class="col-12 d-flex justify-content-center">
-
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-							<i class="bi bi-list"></i>
-						</button>
-
-					</div>
-
-					<div class="col-12 text-center">
-
-						<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'primary',
-									'menu_id'        => 'primary-menu',
-									'container'		 => false,
-								)
-							);
-						?>
-
-					</div>
-
-				</div>
+				<?php
+				wp_nav_menu( array(
+					'theme_location'    => 'primary',
+					'depth'             =>  2,
+					'container'         => 'div',
+					'container_class'   => 'collapse navbar-collapse justify-content-md-center',
+					'container_id'      => 'main-navbar',
+					'menu_class'        => 'nav navbar-nav',
+					'add_li_class'		=> 'px-3',
+					'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'            => new WP_Bootstrap_Navwalker(),
+				) );
+				?>
 
 			</div>
-
 		</nav>
 
 	</header>
