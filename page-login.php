@@ -1,3 +1,10 @@
+<?php
+    if( is_user_logged_in() ){
+        header("Location: /");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
