@@ -16,6 +16,8 @@ get_header();
 query_posts(array(
 	'post_type' => 'slide'
  ));
+
+ $section_counter = 0;
 ?>
 
 	<main id="primary" class="site-main">
@@ -91,8 +93,15 @@ query_posts(array(
 		<?php } ?>
 
 		<!-- Dynamic Section 1 -->
-		<?php if( get_option('section_1_enable') ) {?>
-		<section class="container loader-section">
+		<?php if( get_option('section_1_enable') ) { 
+			$section_counter++; 
+			if($section_counter % 2 == 0) {
+				$section_class = "loader-section section-bg-color";
+			} else {
+				$section_class = "container loader-section";
+			}
+		?>
+		<section class="<?php echo $section_class ?>">
 
 			<div class="row d-flex justify-content-center">
 				<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_1_title') ) ?></h3>
@@ -107,8 +116,15 @@ query_posts(array(
 		<?php } ?>
 
 		<!-- Dynamic Section 2 -->
-		<?php if( get_option('section_2_enable') ) {?>
-		<section class="loader-section section-bg-color">
+		<?php if( get_option('section_2_enable') ) {
+			$section_counter++; 
+			if($section_counter % 2 == 0) {
+				$section_class = "loader-section section-bg-color";
+			} else {
+				$section_class = "container loader-section";
+			}	
+		?>
+		<section class="<?php echo $section_class ?>">
 
 			<div class="container">
 
@@ -127,8 +143,15 @@ query_posts(array(
 		<?php } ?>
 
 		<!-- Dynamic Section 3 -->
-		<?php if( get_option('section_3_enable') ) {?>
-		<section class="container loader-section">
+		<?php if( get_option('section_3_enable') ) {
+			$section_counter++; 
+			if($section_counter % 2 == 0) {
+				$section_class = "loader-section section-bg-color";
+			} else {
+				$section_class = "container loader-section";
+			}	
+		?>
+		<section class="<?php echo $section_class ?>">
 
 			<div class="row d-flex justify-content-center">
 				<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_3_title') ) ?></h3>
@@ -143,8 +166,15 @@ query_posts(array(
 		<?php } ?>
 
 		<!-- Dynamic Section 4 -->
-		<?php if( get_option('section_4_enable') ) {?>
-		<section class="loader-section section-bg-color">
+		<?php if( get_option('section_4_enable') ) {
+			$section_counter++; 
+			if($section_counter % 2 == 0) {
+				$section_class = "loader-section section-bg-color";
+			} else {
+				$section_class = "container loader-section";
+			}	
+		?>
+		<section class="<?php echo $section_class ?>">
 
 			<div class="container">
 
@@ -163,8 +193,15 @@ query_posts(array(
 		<?php } ?>
 
 		<!-- Dynamic Section 5 -->
-		<?php if( get_option('section_5_enable') ) {?>
-		<section class="container loader-section">
+		<?php if( get_option('section_5_enable') ) {
+			$section_counter++; 
+			if($section_counter % 2 == 0) {
+				$section_class = "loader-section section-bg-color";
+			} else {
+				$section_class = "container loader-section";
+			}	
+		?>
+		<section class="<?php echo $section_class ?>">
 
 			<div class="row d-flex justify-content-center">
 				<h3 class="text-center pt-5"><?php echo esc_attr( get_option('section_5_title') ) ?></h3>
@@ -179,8 +216,15 @@ query_posts(array(
 		<?php } ?>
 
 		<!-- Dynamic Section 6 -->
-		<?php if( get_option('section_6_enable') ) {?>
-		<section class="loader-section section-bg-color">
+		<?php if( get_option('section_6_enable') ) {
+			$section_counter++; 
+			if($section_counter % 2 == 0) {
+				$section_class = "loader-section section-bg-color";
+			} else {
+				$section_class = "container loader-section";
+			}	
+		?>
+		<section class="<?php echo $section_class ?>">
 
 			<div class="container">
 

@@ -211,9 +211,11 @@ function build_homepage_page() {
 </form>
 </div>
 <style>
-    td{
-        margin: 5px;
-        padding: 20px;
+    tr {
+        margin: 10px!important;
+    }
+    td {
+        padding: 20px!important;
         border: 1px solid #999;
         border-radius: 10px;
     }

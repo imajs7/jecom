@@ -88,7 +88,6 @@
 
 				<div class="col site-header__logo d-flex justify-content-center">
 					<?php 
-						//the_custom_logo(); 
 						include "template-parts/logo-structure.php";
 					?>
 				</div>

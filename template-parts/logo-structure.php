@@ -10,7 +10,7 @@
         <div class="site-title">
             <a href="/"><?php echo get_bloginfo('name'); ?></a>
         </div>
-        <p class="site-tagline text-muted"><?php echo get_bloginfo('description'); ?></p>
+        <p class="site-tagline"><a class="text-muted text-decoration-none" href="<?php echo get_home_url(); ?>"><?php echo get_bloginfo('description'); ?></a></p>
     </div>
 
 </div>

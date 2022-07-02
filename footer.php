@@ -59,11 +59,11 @@
 		<div class="social-media">
 
 			<ul class="social-network">
-				<li><a href="#" class="icoFacebook" title="Facebook"><i class="bi bi-facebook"></i></a></li>
-				<li><a href="#" class="icoInstagram" title="Instagram"><i class="bi bi-instagram"></i></a></li>
-				<li><a href="#" class="icoWhatsapp" title="WhatsApp"><i class="bi bi-whatsapp"></i></a></li>
-				<li><a href="#" class="icoTwitter" title="Twitter"><i class="bi bi-twitter"></i></a></li>
-				<li><a href="#" class="icoEmail" title="Email"><i class="bi bi-envelope"></i></a></li>
+				<li><a href="<?php echo "https://facebook.com/" . get_option('business_facebook');?>" title="Facebook"><i class="bi bi-facebook"></i></a></li>
+				<li><a href="<?php echo "https://instagram.com/" . get_option('business_instagram');?>" title="Instagram"><i class="bi bi-instagram"></i></a></li>
+				<li><a href="<?php echo "https://wa.me/" . get_option('business_whatsapp');?>" title="WhatsApp"><i class="bi bi-whatsapp"></i></a></li>
+				<li><a href="<?php echo "https://twitter.com/" . get_option('business_twitter');?>" title="Twitter"><i class="bi bi-twitter"></i></a></li>
+				<li><a href="<?php echo "mailto:" . get_option('business_email');?>" title="Email"><i class="bi bi-envelope"></i></a></li>
 			</ul>
 
 		</div>

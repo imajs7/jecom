@@ -38,6 +38,7 @@ function register_admin_settings() {
     register_setting( 'admin-settings-group', 'business_facebook' );
     register_setting( 'admin-settings-group', 'business_instagram' );
     register_setting( 'admin-settings-group', 'business_twitter' );
+    register_setting( 'admin-settings-group', 'business_whatsapp' );
 
 }
 
@@ -61,13 +62,16 @@ function admin_settings_page() {
             <h4>Business Contact</h4>
             <input type="text" name="business_contact" value="<?php echo esc_attr( get_option('business_contact') ); ?>" />
         </div>
+
+    </div>
+    <div class="row">
         <div class="col">
             <h4>Business Intro</h4>
             <textarea style="min-width: 400px" name="business_intro"><?php echo esc_attr( get_option('business_intro') ); ?></textarea>
         </div>
-
     </div>
-
+    <br/>
+    <hr/>
     <h3>Top Bar Info</h3>
     <div class="row">
 
@@ -105,7 +109,8 @@ function admin_settings_page() {
         </div>
 
     </div>
-
+    <br/>
+    <hr/>
     <h3>Social Media Info</h3>
     <div class="row">
 
@@ -117,11 +122,17 @@ function admin_settings_page() {
             <h4>Instagram Page</h4>
             <input type="text" name="business_instagram" value="<?php echo esc_attr( get_option('business_instagram') ); ?>" />
         </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <h4>WhatsApp Number</h4>
+            <input type="text" name="business_whatsapp" value="<?php echo esc_attr( get_option('business_whatsapp') ); ?>" />
+        </div>
         <div class="col">
             <h4>Twitter Handle</h4>
             <input type="text" name="business_twitter" value="<?php echo esc_attr( get_option('business_twitter') ); ?>" />
         </div>
-
     </div>
     
     <?php submit_button(); ?>
@@ -129,12 +140,15 @@ function admin_settings_page() {
 </form>
 </div>
 <style>
+    form {
+        border: 1px solid #777;
+        padding: 20px;
+    }
     .row{
         display: flex;
     }
     .col{
         display: inline-block;
-        margin: 20px;
     }
 </style>
 <?php 
