@@ -78,7 +78,7 @@
 				)
 			);
 		?>
-    	<p class="text-center text-muted">&copy; <?php echo date('Y');?> <?php bloginfo('name'); ?>. Powered By <a class="text-muted text-decoration-none" href="https://jsmedia7.in" target="_blank">JSMedia7</a></p>
+    	<p class="text-center text-muted text-small">&copy; <?php echo date('Y');?> <?php bloginfo('name'); ?>. Powered By <a class="text-muted text-decoration-none" href="https://jsmedia7.in" target="_blank">JSMedia7</a></p>
 	</div>
 </footer>
 

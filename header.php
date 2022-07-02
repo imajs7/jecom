@@ -92,7 +92,7 @@
 					?>
 				</div>
 
-				<div class="col-md-3 cart d-flex justify-content-end align-items-center">
+				<div class="col-md-3 cart d-flex justify-content-end align-items-center d-none d-md-block">
 					<a href="<?php echo wc_get_cart_url(); ?>"><i class="bi bi-bag p-2"></i></a>
 					<a class="text-decoration-none" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><span class="cart-count-label"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> </span> <?php echo WC()->cart->get_cart_total(); ?></a>
 				</div>
@@ -107,8 +107,13 @@
 			<div class="container">
 				
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
-					<span class="navbar-toggler-icon"></span>
+					<i class="bi bi-list"></i>
 				</button>
+
+				<div class="col-md-3 cart d-flex justify-content-end align-items-center d-md-none">
+					<a href="<?php echo wc_get_cart_url(); ?>"><i class="bi bi-bag p-2 text-white"></i></a>
+					<a class="text-decoration-none text-white" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><span class="cart-count-label"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> &nbsp; </span> <?php echo WC()->cart->get_cart_total(); ?></a>
+				</div>
 
 				<?php
 				wp_nav_menu( array(

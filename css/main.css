@@ -11633,41 +11633,41 @@ img.custom-logo {
 }
 
 /* LOGO STYLING */
-.site-header .jsm-site-logo .logo-image, .site-footer .jsm-site-logo .logo-image {
+.site-header .jsm-site-logo .logo-image, .site-footer .jsm-site-logo .logo-image, .form-container .jsm-site-logo .logo-image {
   display: inline-block;
 }
-.site-header .jsm-site-logo .logo-image img, .site-footer .jsm-site-logo .logo-image img {
+.site-header .jsm-site-logo .logo-image img, .site-footer .jsm-site-logo .logo-image img, .form-container .jsm-site-logo .logo-image img {
   max-width: 75px;
   height: auto;
   border: 2px solid #000000;
   padding: 1px;
 }
-.site-header .jsm-site-logo .logo-text, .site-footer .jsm-site-logo .logo-text {
+.site-header .jsm-site-logo .logo-text, .site-footer .jsm-site-logo .logo-text, .form-container .jsm-site-logo .logo-text {
   display: inline-block;
   position: relative;
   transform: translateY(15%);
 }
-.site-header .jsm-site-logo .logo-text .site-title, .site-footer .jsm-site-logo .logo-text .site-title {
+.site-header .jsm-site-logo .logo-text .site-title, .site-footer .jsm-site-logo .logo-text .site-title, .form-container .jsm-site-logo .logo-text .site-title {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 500px;
   letter-spacing: 2px;
 }
-.site-header .jsm-site-logo .logo-text .site-title a, .site-footer .jsm-site-logo .logo-text .site-title a {
+.site-header .jsm-site-logo .logo-text .site-title a, .site-footer .jsm-site-logo .logo-text .site-title a, .form-container .jsm-site-logo .logo-text .site-title a {
   color: #333;
   text-decoration: none !important;
 }
-.site-header .jsm-site-logo .logo-text .site-title a:hover, .site-footer .jsm-site-logo .logo-text .site-title a:hover {
+.site-header .jsm-site-logo .logo-text .site-title a:hover, .site-footer .jsm-site-logo .logo-text .site-title a:hover, .form-container .jsm-site-logo .logo-text .site-title a:hover {
   color: #111;
 }
-.site-header .jsm-site-logo .logo-text .site-tagline, .site-footer .jsm-site-logo .logo-text .site-tagline {
+.site-header .jsm-site-logo .logo-text .site-tagline, .site-footer .jsm-site-logo .logo-text .site-tagline, .form-container .jsm-site-logo .logo-text .site-tagline {
   font-family: "montez", sans-serif;
   letter-spacing: 0.15rem;
   font-weight: 500;
 }
 @media (max-width: 767.98px) {
-  .site-header .jsm-site-logo, .site-footer .jsm-site-logo {
+  .site-header .jsm-site-logo, .site-footer .jsm-site-logo, .form-container .jsm-site-logo {
     margin: 10px 0;
   }
 }
@@ -11827,6 +11827,34 @@ img.custom-logo {
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
   line-height: 40px !important;
+}
+
+/* ------------- Login Form ------------------ */
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
+.form-container form button {
+  margin-top: 15px;
+  padding: 7px 26px;
+  border-radius: 3px;
+}
+@media (max-width: 767.98px) {
+  .form-container {
+    margin: 10px auto;
+  }
+}
+
+.login-banner {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* ***************** FOOTER ******************** */

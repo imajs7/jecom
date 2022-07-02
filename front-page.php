@@ -22,10 +22,10 @@ query_posts(array(
 
 	<main id="primary" class="site-main">
 
-		<section class="container py-4">
+		<section class="">
 
 			<!-- Carousel -->
-			<div id="carouselExampleControls" class="carousel slide overflow-hidden rounded-4" data-ride="carousel">
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
 				<div class="carousel-inner">
 
