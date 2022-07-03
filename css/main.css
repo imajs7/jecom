@@ -11675,6 +11675,7 @@ img.custom-logo {
 /* Main Menu */
 #main-navbar a.nav-link {
   color: white;
+  font-weight: 500;
 }
 #main-navbar a.nav-link:hover {
   color: #999;
