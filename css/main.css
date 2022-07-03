@@ -11793,6 +11793,9 @@ img.custom-logo {
 .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--downloads a:before {
   content: "\f316";
 }
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--wc-smart-coupons a:before {
+  content: "\f18e";
+}
 .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--edit-address a:before {
   content: "\f11e";
 }

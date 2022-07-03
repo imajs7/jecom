@@ -104,7 +104,14 @@ add_filter('admin_footer_text', 'update_footer_admin');
 
 /* -------------- Add Coupon to Nav Menu Admin -------------- */
 function add_coupons_to_admin() {
-    add_menu_page( 'add_coupons_to_admin', 'Coupons', 'read', '/edit.php?post_type=shop_coupon', '', 'dashicons-tickets', 10 );
+    add_menu_page( 
+		'add_coupons_to_admin', 
+		'Coupons', 
+		'read', 
+		'/edit.php?post_type=shop_coupon', 
+		'', 
+		'dashicons-money-alt',
+		10 );
 }
 add_action( 'admin_menu', 'add_coupons_to_admin' );
 
