@@ -469,33 +469,6 @@ img.custom-logo{
         text-transform: uppercase;
     }
 
-    .footer-menu {
-
-        margin: 2rem;
-        padding: 0;
-        list-style-type: none;
-        justify-content: center;
-
-        display: flex;
-
-        li {
-            padding: 0 15px;
-
-            a {
-                text-decoration: none;
-                font-size: 14px;
-                font-weight: 600;
-                color: #777;
-            }
-    
-            a:hover {
-                color: #000;
-            }
-
-        }
-
-    }
-
     .site-intro {
 
         width: 90%;
@@ -526,6 +499,42 @@ img.custom-logo{
                 font-size: 18px;
             }
         }
+    }
+
+    .footer-menu {
+
+        margin: 2rem;
+        padding: 0;
+        list-style-type: none;
+        justify-content: center;
+        
+        @include media-breakpoint-down(sm){
+            text-align: center;
+            li {
+                margin: 5px 0;
+            }
+        }
+
+        @include media-breakpoint-up(sm){
+            display: flex;
+        }
+
+        li {
+            padding: 0 15px;
+
+            a {
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                color: #777;
+            }
+    
+            a:hover {
+                color: #000;
+            }
+
+        }
+
     }
 
 }

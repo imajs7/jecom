@@ -11886,25 +11886,6 @@ img.custom-logo {
   font-size: 16px;
   text-transform: uppercase;
 }
-.site-footer .footer-menu {
-  margin: 2rem;
-  padding: 0;
-  list-style-type: none;
-  justify-content: center;
-  display: flex;
-}
-.site-footer .footer-menu li {
-  padding: 0 15px;
-}
-.site-footer .footer-menu li a {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  color: #777;
-}
-.site-footer .footer-menu li a:hover {
-  color: #000;
-}
 .site-footer .site-intro {
   width: 90%;
   text-align: center;
@@ -11931,6 +11912,37 @@ img.custom-logo {
 }
 .site-footer .social-network li i {
   font-size: 18px;
+}
+.site-footer .footer-menu {
+  margin: 2rem;
+  padding: 0;
+  list-style-type: none;
+  justify-content: center;
+}
+@media (max-width: 575.98px) {
+  .site-footer .footer-menu {
+    text-align: center;
+  }
+  .site-footer .footer-menu li {
+    margin: 5px 0;
+  }
+}
+@media (min-width: 576px) {
+  .site-footer .footer-menu {
+    display: flex;
+  }
+}
+.site-footer .footer-menu li {
+  padding: 0 15px;
+}
+.site-footer .footer-menu li a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #777;
+}
+.site-footer .footer-menu li a:hover {
+  color: #000;
 }
 
 /* COOKIES NOTICE */

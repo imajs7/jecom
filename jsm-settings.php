@@ -16,6 +16,42 @@ add_action('delete_user', function($id) {
     }
 });
 
+/** ------- Check if WooCommerce is activated ----------- */
+function woo_check(){
+
+	if ( class_exists( 'woocommerce' ) ) {
+
+		global $woo_active;
+		$woo_active = true;
+
+	} else {
+
+		global  $woo_active;
+		$woo_active = false;
+
+	}
+
+}
+add_action( 'admin_init', 'woo_check' );
+
+// show admin notice if WooCommerce is not activated
+function no_woo_admin_notice(){
+
+	global  $woo_active;
+
+	if ( ! $woo_active ){
+		?>
+
+		<div class="notice notice-error is-dismissible">
+			<p>WooCommerce is not activated, please activate it to use <b>Jecom Theme</b></p>
+		</div>
+		<?php
+
+	}
+
+}
+add_action('admin_notices', 'no_woo_admin_notice');
+
 /* -------------- ENQUEUE THE DASHICON SCRIPT -------------- */
 add_action( 'wp_enqueue_scripts', 'load_dashicons_front_end' );
 function load_dashicons_front_end() {
