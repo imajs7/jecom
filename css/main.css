@@ -11637,7 +11637,7 @@ img.custom-logo {
   display: inline-block;
 }
 .site-header .jsm-site-logo .logo-image img, .site-footer .jsm-site-logo .logo-image img, .form-container .jsm-site-logo .logo-image img {
-  max-width: 75px;
+  max-width: 60px;
   height: auto;
   border: 2px solid #000000;
   padding: 1px;

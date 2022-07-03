@@ -179,7 +179,7 @@ function build_homepage_page() {
                 <br/><br/>
                 
                 <label>Section Description</label><br/>
-                <inp type="text" name="section_5_description" value="<?php echo esc_attr( get_option('section_5_description') ); ?>" />
+                <input type="text" name="section_5_description" value="<?php echo esc_attr( get_option('section_5_description') ); ?>" />
             
             </td>
         </tr>
