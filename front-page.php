@@ -240,7 +240,15 @@ query_posts(array(
 			</div>
 
 		</section>
+
 		<?php } ?>
+
+		<!-- Modal Window -->
+		<?php 
+			if( get_option('modal_window_enable') ) {
+				require "template-parts/bootstrap-modal.php";
+			} 
+		?>
 
 	</main>
 

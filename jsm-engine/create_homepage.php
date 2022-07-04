@@ -47,6 +47,9 @@ function register_build_homepage() {
     register_setting( 'build-homepage-group', 'section_5_description' );
     register_setting( 'build-homepage-group', 'section_6_description' );
 
+    register_setting( 'build-homepage-group', 'modal_window_title' );
+    register_setting( 'build-homepage-group', 'modal_window_content' );
+
     register_setting( 'build-homepage-group', 'category_section_enable' );
     register_setting( 'build-homepage-group', 'section_1_enable' );
     register_setting( 'build-homepage-group', 'section_2_enable' );
@@ -54,6 +57,7 @@ function register_build_homepage() {
     register_setting( 'build-homepage-group', 'section_4_enable' );
     register_setting( 'build-homepage-group', 'section_5_enable' );
     register_setting( 'build-homepage-group', 'section_6_enable' );
+    register_setting( 'build-homepage-group', 'modal_window_enable' );
 }
 
 function build_homepage_page() {
@@ -203,6 +207,25 @@ function build_homepage_page() {
             
             </td>
         </tr>
+
+        <tr class="row">
+        <th class="col">Settings for Modal Window</th>
+            <td>
+
+                <input type="checkbox" name="modal_window_enable" value="1" <?php checked(1, get_option('modal_window_enable'), true); ?> /><label>Show on frontpage</label><br/><br/>
+                
+                <label>Modal Window Title</label><br/>
+                <input type="text" name="modal_window_title" value="<?php echo esc_attr( get_option('modal_window_title') ); ?>" />
+                <br/><br/>
+                
+                <label>Modal Window Content</label><br/>
+                <textarea style="min-width: 50%" name="modal_window_content"><?php echo esc_attr( get_option('modal_window_content') ); ?></textarea>
+                <br/><br/>
+                
+            </td>
+        </tr>
+
+
 
     </table>
     
