@@ -22,10 +22,10 @@ query_posts(array(
 
 	<main id="primary" class="site-main">
 
-		<section class="">
+		<section class="<?php if(esc_attr( get_option('containerized_slider') ) == 'yes') echo 'container py-4'; ?>">
 
 			<!-- Carousel -->
-			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			<div id="carouselExampleControls" class="carousel slide <?php if(esc_attr( get_option('containerized_slider') ) == 'yes') echo 'overflow-hidden rounded-4'; ?>" data-ride="carousel">
 
 				<div class="carousel-inner">
 

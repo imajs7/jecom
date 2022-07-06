@@ -1,11 +1,6 @@
 <?php
 
 /* ------------- ADD NONCE TO LOGOUT URL -------------- */
-function add_nonce_to_logout_url(){
-    $logout = '/wp-login.php?action=logout&redirect_to=/&_wpnonce=' . wp_create_nonce( 'log-out' );	
-    return $logout;
-  }
-  add_shortcode('logout-nonce', 'add_nonce_to_logout_url');
   
   function add_logout_url_nonce($items){
     foreach($items as $item){
@@ -14,8 +9,19 @@ function add_nonce_to_logout_url(){
       }
         
       if( $item->title == 'Username' ){
+
            $current_user = wp_get_current_user();
-           $item->title = "Hi " . $current_user->display_name . "!";
+
+           if($current_user=='') {
+               $current_user = $current_user->user_login;
+           }
+
+           if(is_user_logged_in() ) {
+               $item->title = "Hi " . $current_user->display_name . "!";
+           } else {
+               $item->title = "Hi Guest!";
+           }
+
            $item->classes = "nav-username hide_if_not_logged_in";
       }
         

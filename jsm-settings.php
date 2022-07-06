@@ -202,7 +202,7 @@ function add_additional_class_on_li($classes, $item, $args) {
 }
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 
-/* ------------------------------------ */
+/* -----------------Woo Commerce Login Form ------------------- */
 function render_woo_login_form( $atts ) { 
 	if ( ! is_user_logged_in() ) {  
 	  if ( function_exists( 'woocommerce_login_form' ) && 
@@ -222,3 +222,13 @@ function render_woo_login_form( $atts ) {
   }
   add_shortcode( 'jsm-custom-login-form', 'render_woo_login_form' );
 
+/**
+ * 
+ */
+
+function load_wp_media_files( $page ) {
+  if( $page == 'create_admin_setting.php' ) {
+    wp_enqueue_media();
+  }
+}
+add_action( 'admin_enqueue_scripts', 'load_wp_media_files' );

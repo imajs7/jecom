@@ -407,36 +407,77 @@ img.custom-logo{
 }
   
 /* ------------- Login Form ------------------ */
-.form-container {
 
-    max-width: 400px;
-    margin:  0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    top: 50%;
-    position: relative;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+.login-page {
+    margin: 0;
+    padding: 0;
 
-    form {
+    .form-holder {
 
-        button {
-            margin-top: 15px;
-            padding: 7px 26px;
-            border-radius: 3px;
+        .form-container {
+
+            max-width: 400px;
+            margin:  0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            top: 50%;
+            position: relative;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        
+            form {
+
+                .input-text {
+                    font-size: 16px;
+                }
+        
+                button {
+                    margin-top: 15px;
+                    padding: 5px 26px;
+                    border-radius: 3px;
+                    @extend .btn, .btn-primary;
+                }
+            }
+        
+            p.form-row {
+                label {
+                    display: block;
+                }
+            }
+        
+            p.lost_password {
+                margin-top: 10px;
+                font-size: 12px;
+        
+                a {
+                    text-decoration: none;
+                }
+            }
+        
+        }
+
+        .logo-holder {
+            margin-bottom: 20px;
+        }
+
+    }
+
+    .form-holder, .img-holder {
+        @include media-breakpoint-down(md) {
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     }
 
-    @include media-breakpoint-down(md) {
-        margin: 10px auto;
+    .img-holder {
+        .login-banner {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            overflow: hidden;
+        }
     }
 
-}
-
-.login-banner {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
 }
 
 /* ***************** FOOTER ******************** */

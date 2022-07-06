@@ -23,6 +23,7 @@ function admin_settings_create_menu() {
 
 function register_admin_settings() {
 	//register our settings
+
 	register_setting( 'admin-settings-group', 'business_email' );
 	register_setting( 'admin-settings-group', 'business_contact' );
     register_setting( 'admin-settings-group', 'business_intro' );
@@ -40,6 +41,9 @@ function register_admin_settings() {
     register_setting( 'admin-settings-group', 'business_twitter' );
     register_setting( 'admin-settings-group', 'business_whatsapp' );
 
+    register_setting( 'admin-settings-group', 'login_page_banner_image' );
+    register_setting( 'admin-settings-group', 'login_page_banner_link' );
+
 }
 
 function admin_settings_page() {
@@ -51,6 +55,7 @@ function admin_settings_page() {
     <?php settings_fields( 'admin-settings-group' ); ?>
     <?php do_settings_sections( 'admin-settings-group' ); ?>
 
+    
     <h3>Business Info</h3>
     <div class="row">
 
@@ -133,6 +138,26 @@ function admin_settings_page() {
             <h4>Twitter Handle</h4>
             <input type="text" name="business_twitter" value="<?php echo esc_attr( get_option('business_twitter') ); ?>" />
         </div>
+    </div>
+    <br/>
+    <hr/>
+    <h3>Login Page Banner</h3>
+    <div class="row">
+
+        <div class="col">
+            <h4>Select Image (preferrably sqare image)</h4>
+            <input type="text" name="login_page_banner_image" value="<?php echo esc_attr( get_option('login_page_banner_image') ); ?>" />
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+            <h4>Enter action link</h4>
+            <input type="text" name="login_page_banner_link" value="<?php echo esc_attr( get_option('login_page_banner_link') ); ?>" />
+        </div>
+
     </div>
     
     <?php submit_button(); ?>

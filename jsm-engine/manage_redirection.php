@@ -3,11 +3,10 @@
 /* ----------------- Login redirect -------------------- */
 function jsm_customer_login_redirect( $redirect, $user ) {
      
-    if ( wc_user_has_role( $user, 'administrator' ) ) {
+    if ( wc_user_has_role( $user, 'administrator' ) || wc_user_has_role( $user, 'shop_manager' ) ) {
 		$redirect = "/wp-admin/";
 	} else {
-        $redirect = get_home_url(); // homepage
-        //$redirect = wc_get_page_permalink( 'shop' ); // shop page
+        $redirect = get_home_url();
     }
   
     return $redirect;
@@ -29,3 +28,21 @@ function logout_redirect(){
     exit;
 }
 add_action('wp_logout','logout_redirect');
+
+/** redirection for wp-admin */
+function redirect_for_wp_admin() {
+	global $pagenow;
+	if( $pagenow == 'wp-login.php' && $_GET['action'] != 'logout' ) {
+		wp_redirect( site_url( '/login' ) );
+		exit;
+	}
+}
+add_action('init','redirect_for_wp_admin');
+
+/** Error handling on new login page */
+function login_failed() {
+	$login_page  = home_url( '/login/' );
+	wp_redirect( $login_page . '?login=failed' );
+	exit;
+}
+add_action( 'wp_login_failed', 'login_failed' );

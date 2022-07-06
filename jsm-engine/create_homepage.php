@@ -23,6 +23,9 @@ function build_homepage_create_menu() {
 
 function register_build_homepage() {
 	//register our settings
+
+    register_setting( 'build-homepage-group', 'containerized_slider' );
+
     register_setting( 'build-homepage-group', 'category_section_title' );
     register_setting( 'build-homepage-group', 'category_section_ids' );
 
@@ -69,6 +72,32 @@ function build_homepage_page() {
     <?php settings_fields( 'build-homepage-group' ); ?>
     <?php do_settings_sections( 'build-homepage-group' ); ?>
     <table class="form-table">
+
+
+        <tr class="row">
+        <th class="col">Settings for Slider Width</th>
+            <td>
+                <label><input type="radio" name="containerized_slider" value="yes" <?php if(esc_attr( get_option('containerized_slider') ) == 'yes') echo 'checked'; ?> /> Containerized </label>
+                <label><input type="radio" name="containerized_slider" value="no"  <?php if(esc_attr( get_option('containerized_slider') ) == 'no') echo 'checked'; ?> /> Full Width </label>
+            </td>
+        </tr>
+
+        <tr class="row">
+        <th class="col">Settings for Modal Window</th>
+            <td>
+
+                <input type="checkbox" name="modal_window_enable" value="1" <?php checked(1, get_option('modal_window_enable'), true); ?> /><label>Show on frontpage</label><br/><br/>
+                
+                <label>Modal Window Title</label><br/>
+                <input type="text" name="modal_window_title" value="<?php echo esc_attr( get_option('modal_window_title') ); ?>" />
+                <br/><br/>
+                
+                <label>Modal Window Content</label><br/>
+                <textarea style="min-width: 50%" name="modal_window_content"><?php echo esc_attr( get_option('modal_window_content') ); ?></textarea>
+                <br/><br/>
+                
+            </td>
+        </tr>
 
         <tr class="row">
         <th class="col">Settings for Category Grid</th>
@@ -207,25 +236,6 @@ function build_homepage_page() {
             
             </td>
         </tr>
-
-        <tr class="row">
-        <th class="col">Settings for Modal Window</th>
-            <td>
-
-                <input type="checkbox" name="modal_window_enable" value="1" <?php checked(1, get_option('modal_window_enable'), true); ?> /><label>Show on frontpage</label><br/><br/>
-                
-                <label>Modal Window Title</label><br/>
-                <input type="text" name="modal_window_title" value="<?php echo esc_attr( get_option('modal_window_title') ); ?>" />
-                <br/><br/>
-                
-                <label>Modal Window Content</label><br/>
-                <textarea style="min-width: 50%" name="modal_window_content"><?php echo esc_attr( get_option('modal_window_content') ); ?></textarea>
-                <br/><br/>
-                
-            </td>
-        </tr>
-
-
 
     </table>
     

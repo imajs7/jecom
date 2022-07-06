@@ -2565,7 +2565,7 @@ textarea.form-control-lg {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
-.btn-check[disabled] + .btn, .btn-check:disabled + .btn {
+.btn-check[disabled] + .btn, .login-page .form-holder .form-container form .btn-check[disabled] + button, .btn-check:disabled + .btn, .login-page .form-holder .form-container form .btn-check:disabled + button {
   pointer-events: none;
   filter: none;
   opacity: 0.65;
@@ -2764,11 +2764,11 @@ textarea.form-control-lg {
 .input-group > .form-select:focus {
   z-index: 3;
 }
-.input-group .btn {
+.input-group .btn, .input-group .login-page .form-holder .form-container form button, .login-page .form-holder .form-container form .input-group button {
   position: relative;
   z-index: 2;
 }
-.input-group .btn:focus {
+.input-group .btn:focus, .input-group .login-page .form-holder .form-container form button:focus, .login-page .form-holder .form-container form .input-group button:focus {
   z-index: 3;
 }
 
@@ -2790,7 +2790,8 @@ textarea.form-control-lg {
 .input-group-lg > .form-control,
 .input-group-lg > .form-select,
 .input-group-lg > .input-group-text,
-.input-group-lg > .btn {
+.input-group-lg > .btn,
+.login-page .form-holder .form-container form .input-group-lg > button {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.5rem;
@@ -2799,7 +2800,8 @@ textarea.form-control-lg {
 .input-group-sm > .form-control,
 .input-group-sm > .form-select,
 .input-group-sm > .input-group-text,
-.input-group-sm > .btn {
+.input-group-sm > .btn,
+.login-page .form-holder .form-container form .input-group-sm > button {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.25rem;
@@ -3012,7 +3014,7 @@ textarea.form-control-lg {
   z-index: 3;
 }
 
-.btn {
+.btn, .login-page .form-holder .form-container form button {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
   --bs-btn-font-family: ;
@@ -3048,31 +3050,31 @@ textarea.form-control-lg {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .btn {
+  .btn, .login-page .form-holder .form-container form button {
     transition: none;
   }
 }
-.btn:hover {
+.btn:hover, .login-page .form-holder .form-container form button:hover {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
 }
-.btn-check:focus + .btn, .btn:focus {
+.btn-check:focus + .btn, .login-page .form-holder .form-container form .btn-check:focus + button, .btn:focus, .login-page .form-holder .form-container form button:focus {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
   outline: 0;
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn-check:checked + .btn, .btn-check:active + .btn, .btn:active, .btn.active, .btn.show {
+.btn-check:checked + .btn, .login-page .form-holder .form-container form .btn-check:checked + button, .btn-check:active + .btn, .login-page .form-holder .form-container form .btn-check:active + button, .btn:active, .login-page .form-holder .form-container form button:active, .btn.active, .login-page .form-holder .form-container form button.active, .btn.show, .login-page .form-holder .form-container form button.show {
   color: var(--bs-btn-active-color);
   background-color: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
 }
-.btn-check:checked + .btn:focus, .btn-check:active + .btn:focus, .btn:active:focus, .btn.active:focus, .btn.show:focus {
+.btn-check:checked + .btn:focus, .login-page .form-holder .form-container form .btn-check:checked + button:focus, .btn-check:active + .btn:focus, .login-page .form-holder .form-container form .btn-check:active + button:focus, .btn:active:focus, .login-page .form-holder .form-container form button:active:focus, .btn.active:focus, .login-page .form-holder .form-container form button.active:focus, .btn.show:focus, .login-page .form-holder .form-container form button.show:focus {
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn:disabled, .btn.disabled, fieldset:disabled .btn {
+.btn:disabled, .login-page .form-holder .form-container form button:disabled, .btn.disabled, .login-page .form-holder .form-container form button.disabled, fieldset:disabled .btn, fieldset:disabled .login-page .form-holder .form-container form button, .login-page .form-holder .form-container form fieldset:disabled button {
   color: var(--bs-btn-disabled-color);
   pointer-events: none;
   background-color: var(--bs-btn-disabled-bg);
@@ -3080,7 +3082,7 @@ textarea.form-control-lg {
   opacity: var(--bs-btn-disabled-opacity);
 }
 
-.btn-primary {
+.btn-primary, .login-page .form-holder .form-container form button {
   --bs-btn-color: #fff;
   --bs-btn-bg: #78187f;
   --bs-btn-border-color: #78187f;
@@ -3225,14 +3227,14 @@ textarea.form-control-lg {
   --bs-btn-box-shadow: none;
   text-decoration: underline;
 }
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, .login-page .form-holder .form-container form .btn-group-lg > button {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
   --bs-btn-font-size: 1.25rem;
   --bs-btn-border-radius: 0.5rem;
 }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, .login-page .form-holder .form-container form .btn-group-sm > button {
   --bs-btn-padding-y: 0.25rem;
   --bs-btn-padding-x: 0.5rem;
   --bs-btn-font-size: 0.875rem;
@@ -3602,23 +3604,35 @@ textarea.form-control-lg {
   display: inline-flex;
   vertical-align: middle;
 }
-.btn-group > .btn,
-.btn-group-vertical > .btn {
+.btn-group > .btn, .login-page .form-holder .form-container form .btn-group > button,
+.btn-group-vertical > .btn,
+.login-page .form-holder .form-container form .btn-group-vertical > button {
   position: relative;
   flex: 1 1 auto;
 }
-.btn-group > .btn-check:checked + .btn,
+.btn-group > .btn-check:checked + .btn, .login-page .form-holder .form-container form .btn-group > .btn-check:checked + button,
 .btn-group > .btn-check:focus + .btn,
+.login-page .form-holder .form-container form .btn-group > .btn-check:focus + button,
 .btn-group > .btn:hover,
+.login-page .form-holder .form-container form .btn-group > button:hover,
 .btn-group > .btn:focus,
+.login-page .form-holder .form-container form .btn-group > button:focus,
 .btn-group > .btn:active,
+.login-page .form-holder .form-container form .btn-group > button:active,
 .btn-group > .btn.active,
+.login-page .form-holder .form-container form .btn-group > button.active,
 .btn-group-vertical > .btn-check:checked + .btn,
+.login-page .form-holder .form-container form .btn-group-vertical > .btn-check:checked + button,
 .btn-group-vertical > .btn-check:focus + .btn,
+.login-page .form-holder .form-container form .btn-group-vertical > .btn-check:focus + button,
 .btn-group-vertical > .btn:hover,
+.login-page .form-holder .form-container form .btn-group-vertical > button:hover,
 .btn-group-vertical > .btn:focus,
+.login-page .form-holder .form-container form .btn-group-vertical > button:focus,
 .btn-group-vertical > .btn:active,
-.btn-group-vertical > .btn.active {
+.login-page .form-holder .form-container form .btn-group-vertical > button:active,
+.btn-group-vertical > .btn.active,
+.login-page .form-holder .form-container form .btn-group-vertical > button.active {
   z-index: 1;
 }
 
@@ -3634,19 +3648,23 @@ textarea.form-control-lg {
 .btn-group {
   border-radius: 0.375rem;
 }
-.btn-group > .btn:not(:first-child),
+.btn-group > .btn:not(:first-child), .login-page .form-holder .form-container form .btn-group > button:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .login-page .form-holder .form-container form .btn-group > button:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn.dropdown-toggle-split:first-child,
-.btn-group > .btn-group:not(:last-child) > .btn {
+.login-page .form-holder .form-container form .btn-group > button.dropdown-toggle-split:first-child,
+.btn-group > .btn-group:not(:last-child) > .btn,
+.login-page .form-holder .form-container form .btn-group > .btn-group:not(:last-child) > button {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.btn-group > .btn:nth-child(n+3),
+.btn-group > .btn:nth-child(n+3), .login-page .form-holder .form-container form .btn-group > button:nth-child(n+3),
 .btn-group > :not(.btn-check) + .btn,
-.btn-group > .btn-group:not(:first-child) > .btn {
+.login-page .form-holder .form-container form .btn-group > :not(.btn-check) + button,
+.btn-group > .btn-group:not(:first-child) > .btn,
+.login-page .form-holder .form-container form .btn-group > .btn-group:not(:first-child) > button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -3662,12 +3680,12 @@ textarea.form-control-lg {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .login-page .form-holder .form-container form .btn-group-sm > button + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .login-page .form-holder .form-container form .btn-group-lg > button + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
@@ -3677,21 +3695,23 @@ textarea.form-control-lg {
   align-items: flex-start;
   justify-content: center;
 }
-.btn-group-vertical > .btn,
+.btn-group-vertical > .btn, .login-page .form-holder .form-container form .btn-group-vertical > button,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
-.btn-group-vertical > .btn:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .login-page .form-holder .form-container form .btn-group-vertical > button:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group-vertical > .btn-group:not(:last-child) > .btn {
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .login-page .form-holder .form-container form .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn-group:not(:last-child) > .btn,
+.login-page .form-holder .form-container form .btn-group-vertical > .btn-group:not(:last-child) > button {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn ~ .btn,
-.btn-group-vertical > .btn-group:not(:first-child) > .btn {
+.btn-group-vertical > .btn ~ .btn, .login-page .form-holder .form-container form .btn-group-vertical > button ~ .btn, .login-page .form-holder .form-container form .btn-group-vertical > .btn ~ button, .login-page .form-holder .form-container form .btn-group-vertical > button ~ button,
+.btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.login-page .form-holder .form-container form .btn-group-vertical > .btn-group:not(:first-child) > button {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -4704,7 +4724,7 @@ textarea.form-control-lg {
   display: none;
 }
 
-.btn .badge {
+.btn .badge, .login-page .form-holder .form-container form button .badge {
   position: relative;
   top: -1px;
 }
@@ -6635,7 +6655,7 @@ textarea.form-control-lg {
   background-color: currentcolor;
   opacity: 0.5;
 }
-.placeholder.btn::before {
+.placeholder.btn::before, .login-page .form-holder .form-container form button.placeholder::before {
   display: inline-block;
   content: "";
 }
@@ -11835,7 +11855,11 @@ img.custom-logo {
 }
 
 /* ------------- Login Form ------------------ */
-.form-container {
+.login-page {
+  margin: 0;
+  padding: 0;
+}
+.login-page .form-holder .form-container {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -11844,22 +11868,39 @@ img.custom-logo {
   position: relative;
   transform: translateY(-50%);
 }
-.form-container form button {
+.login-page .form-holder .form-container form .input-text {
+  font-size: 16px;
+}
+.login-page .form-holder .form-container form button {
   margin-top: 15px;
-  padding: 7px 26px;
+  padding: 5px 26px;
   border-radius: 3px;
 }
+.login-page .form-holder .form-container p.form-row label {
+  display: block;
+}
+.login-page .form-holder .form-container p.lost_password {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.login-page .form-holder .form-container p.lost_password a {
+  text-decoration: none;
+}
+.login-page .form-holder .logo-holder {
+  margin-bottom: 20px;
+}
 @media (max-width: 767.98px) {
-  .form-container {
-    margin: 10px auto;
+  .login-page .form-holder, .login-page .img-holder {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
-
-.login-banner {
+.login-page .img-holder .login-banner {
   width: 100%;
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+  overflow: hidden;
 }
 
 /* ***************** FOOTER ******************** */

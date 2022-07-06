@@ -162,6 +162,29 @@ function jcom_scripts() {
 add_action( 'wp_enqueue_scripts', 'jcom_scripts' );
 
 /**
+ * Enqueue login css & scripts
+ */
+function jsm_login_enqueue_style() {
+    wp_enqueue_style( 'jcom-main-login', get_template_directory_uri() . "/css/main.css", false ); 
+
+	wp_register_style('Roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,300&display=swap');
+	wp_enqueue_style( 'Roboto' );
+
+	wp_register_style('Montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+	wp_enqueue_style( 'Montserrat' );
+
+	wp_register_style('Montez', 'https://fonts.googleapis.com/css2?family=Montez&display=swap');
+	wp_enqueue_style( 'Montez' );
+}
+ 
+function jsm_login_enqueue_script() {
+    wp_enqueue_script( 'jcom-script-login', get_template_directory_uri() . '/js/jcom.js', false );
+}
+ 
+add_action( 'login_enqueue_scripts', 'jsm_login_enqueue_style', 10 );
+add_action( 'login_enqueue_scripts', 'jsm_login_enqueue_script', 1 );
+
+/**
  * Install custom fonts.
  */
 function enqueue_custom_fonts() {
@@ -358,43 +381,3 @@ function bbloomer_shorten_woo_product_title( $title, $id ) {
       return $title;
    }
 }
-
-/**
- * New login page redirect
- */
-
-function redirect_login_page() {
-	$login_page  = home_url( '/login/' );
-	$page_viewed = basename($_SERVER['REQUEST_URI']);
-
-	if( $page_viewed == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET') {
-		wp_redirect($login_page);
-		exit;
-	}
-}
-//add_action('init','redirect_login_page');
-
-/** Error handling on new login page */
-function login_failed() {
-	$login_page  = home_url( '/login/' );
-	wp_redirect( $login_page . '?login=failed' );
-	exit;
-  }
-  add_action( 'wp_login_failed', 'login_failed' );
-   
-  function verify_username_password( $user, $username, $password ) {
-	$login_page  = home_url( '/login/' );
-	  if( $username == "" || $password == "" ) {
-		  wp_redirect( $login_page . "?login=empty" );
-		  exit;
-	  }
-  }
-  //add_filter( 'authenticate', 'verify_username_password', 1, 3);
-
-  /** Logout redirect */
-  function logout_page() {
-	$login_page  = home_url( '/login/' );
-	wp_redirect( $login_page . "?login=false" );
-	exit;
-  }
-  //add_action('wp_logout','logout_page');

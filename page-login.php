@@ -6,14 +6,34 @@
         exit; // Exit if accessed directly
     }
 
+    require_once ABSPATH . '/wp-load.php';
+
+    // Redirect to HTTPS login if forced to use SSL.
+	if ( force_ssl_admin() && ! is_ssl() ) {
+        if ( 0 === strpos( $_SERVER['REQUEST_URI'], 'http' ) ) {
+            wp_safe_redirect( set_url_scheme( $_SERVER['REQUEST_URI'], 'https' ) );
+            exit;
+        } else {
+            wp_safe_redirect( 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
+            exit;
+        }
+    }
+
+    function login_header( $title = 'Log In', $message = '', $wp_error = null ) {
+        global $error, $interim_login, $action;
+        add_filter( 'wp_robots', 'wp_robots_sensitive_page' );
+        add_action( 'login_head', 'wp_strict_cross_origin_referrer' );
+        add_action( 'login_head', 'wp_login_viewport_meta' );
+    }
+
     global $user_ID;
+    global $wpdb;
+    $error_message = "";
 
     if( is_user_logged_in() ){
         header("Location: /");
         exit;
-    } else {
-        
-        ?>
+    } else {?>
 <!-- ----------------------------------------------------------------------- -->
 
 <!doctype html>
@@ -23,55 +43,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/css/main.css"?>">
-
+    <?php 
+        wp_enqueue_style( 'login' );
+        do_action( 'login_enqueue_scripts' );
+        do_action( 'login_head' );
+    ?>
+    
     <title><?php echo bloginfo( 'name' );?> - <?php echo bloginfo( 'description' );?></title>
+
   </head>
-  <body>
+  <body class="login-page">
     <!-- FORM -->
     <div class="row d-flex m-0 p-0 no-gutters">
 
-        <div class="col-md-6 col-12">
+        <div class="form-holder col-md-6 col-12 p-0">
 
             <div class="form-container">
 
-                <?php require "template-parts/logo-structure.php";?>
+                <div class="logo-holder">
+                    <?php require "template-parts/logo-structure.php"; ?>
+                </div>
 
-                <form method="post">
+                <?php if($_GET['login'] == 'failed') echo "<p>Invalid Credentials</p>"; ?>
 
-                    <p class="text-danger"></p>
-
-                    <div class="form-group">
-                        <label for="username">Username / Email</label>
-                        <input type="text" class="form-control" id="username" name="username">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password">
-                    </div>
-
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="loggedin">
-                        <label class="form-check-label" for="loggedin">Keep me logged in</label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Login</button>
-
-                </form>
+                <?php
+                    echo do_shortcode( '[jsm-custom-login-form]' );
+                ?>
 
             </div>
 
         </div>
 
-        <div class="col-md-6 col-12">
-            <a href="" title="Click me" class="image-click">
-                <img src="https://images.unsplash.com/photo-1656713525438-9116d712aa4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" class="login-banner" />
+        <div class="img-holder col-md-6 col-12 p-0">
+            <a href="<?php echo esc_attr( get_option('login_page_banner_link') ); ?>" title="Click me" class="image-click">
+                <img src="<?php echo esc_attr( get_option('login_page_banner_image') ); ?>" class="login-banner" />
             </a>
         </div>
 
@@ -86,8 +91,4 @@
 </html>
 
 <!-- ----------------------------------------------------------------------- -->
-        <?php 
-        
-    }
-
-?>
+<?php } ?>
