@@ -190,7 +190,7 @@ function hide_if_logged_out_css() {
 /* --------- HIDE FOR USER BELOW SHOP MANAGER --------- */
 add_action( 'wp_head', 'hide_if_user_not_manager', 500 );
 function hide_if_user_not_manager() {
-    if ( ! current_user_can( 'edit_post') ) {
+    if ( ! current_user_can( 'publish_post') ) {
         ?><style>.hide_if_user_not_manager { display: none !important;}</style><?php
     }
 }
@@ -243,3 +243,30 @@ function load_wp_media_files( $page ) {
   }
 }
 add_action( 'admin_enqueue_scripts', 'load_wp_media_files' );
+
+/**
+ * Add login page on theme activation
+ */
+if (isset($_GET['activated']) && is_admin()){
+  
+    $new_page_title = 'Login';
+    $new_page_content = '';
+    $new_page_template = 'page-login.php'; //ex. template-custom.php. 
+  
+	// don't change anything from here unless needed
+    $page_check = get_page_by_title($new_page_title);
+    $new_page = array(
+        'post_type' => 'page',
+        'post_title' => $new_page_title,
+        'post_content' => $new_page_content,
+        'post_status' => 'publish',
+        'post_author' => 1,
+    );
+    if(!isset($page_check->ID)){
+        $new_page_id = wp_insert_post($new_page);
+        if(!empty($new_page_template)){
+            update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
+        }
+    }
+  
+}
