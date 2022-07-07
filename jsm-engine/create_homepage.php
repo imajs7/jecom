@@ -6,13 +6,13 @@ add_action('admin_menu', 'build_homepage_create_menu');
 function build_homepage_create_menu() {
 
 	//create new top-level menu
-	add_menu_page(
+    add_menu_page( 
         __( 'Build Homepage', 'build-homepage' ),
-        'Build Homepage', 
+        __( 'Build Homepage', 'build-homepage' ),
         'manage_woocommerce', 
-        __FILE__, 
+        'homepage-settings', 
         'build_homepage_page', 
-        "dashicons-admin-home",
+        'dashicons-admin-home', 
         4
     );
 

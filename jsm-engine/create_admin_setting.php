@@ -7,14 +7,13 @@ add_action('admin_menu', 'admin_settings_create_menu');
 
 function admin_settings_create_menu() {
 
-	//create new top-level menu
-	add_menu_page(
+    add_menu_page( 
         __( 'Admin Settings', 'admin-settings' ),
-        'Admin Settings', 
+        __( 'Admin Settings', 'admin-settings' ),
         'manage_woocommerce', 
-        __FILE__, 
+        'admin-settings', 
         'admin_settings_page', 
-        "dashicons-admin-network",
+        'dashicons-admin-network', 
         4
     );
 
