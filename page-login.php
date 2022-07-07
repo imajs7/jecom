@@ -76,7 +76,7 @@
 
         <div class="img-holder col-md-6 col-12 p-0">
             <a href="<?php echo esc_attr( get_option('login_page_banner_link') ); ?>" title="Click me" class="image-click">
-                <img src="<?php echo esc_attr( get_option('login_page_banner_image') ); ?>" class="login-banner" />
+                <img src="<?php echo esc_attr( get_option('login_page_banner_image_link') ); ?>" class="login-banner" />
             </a>
         </div>
 

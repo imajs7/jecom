@@ -176,13 +176,21 @@ function jsm_login_enqueue_style() {
 	wp_register_style('Montez', 'https://fonts.googleapis.com/css2?family=Montez&display=swap');
 	wp_enqueue_style( 'Montez' );
 }
+add_action( 'login_enqueue_scripts', 'jsm_login_enqueue_style', 10 );
  
 function jsm_login_enqueue_script() {
     wp_enqueue_script( 'jcom-script-login', get_template_directory_uri() . '/js/jcom.js', false );
 }
- 
-add_action( 'login_enqueue_scripts', 'jsm_login_enqueue_style', 10 );
 add_action( 'login_enqueue_scripts', 'jsm_login_enqueue_script', 1 );
+
+/**
+ *  admin enqueue css & js 
+*/
+function jsm_enqueue_custom_admin_style( $hook ) {
+	wp_enqueue_style('custom_wp_admin_css', get_template_directory_uri() . '/css/admin-style.css', false, '1.0.0');
+    wp_enqueue_script('custom_wp_admin_js', get_template_directory_uri() . '/js/admin-style.js', false, '1.0.0');
+}
+add_action( 'admin_enqueue_scripts', 'jsm_enqueue_custom_admin_style' );
 
 /**
  * Install custom fonts.
