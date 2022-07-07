@@ -1,7 +1,5 @@
 <?php
 
-wp_enqueue_media();
-
 // create custom plugin settings menu
 add_action('admin_menu', 'admin_settings_create_menu');
 
@@ -141,33 +139,6 @@ function admin_settings_page() {
             <input type="text" name="business_twitter" value="<?php echo esc_attr( get_option('business_twitter') ); ?>" />
         </div>
     </div>
-    <br/>
-    <hr/>
-    <h3>Login Page Banner</h3>
-    <div class="row">
-
-        <div class="col image-holder">
-            <img src="<?php echo esc_attr( get_option('login_page_banner_image_link') ); ?>" id="get_login_page_banner_image" width="100" height="100" />
-        </div>
-
-        <div class="col">
-            <h4>Select Image (preferrably sqare image)</h4>
-            <input type="button" id="login_page_banner_image" value="Select Image" />
-            <input type="hidden" class="form-control" name="login_page_banner_image_link" 
-                id="login_page_banner_image_link" 
-                value="<?php echo esc_attr( get_option('login_page_banner_image_link') ); ?>" />
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col">
-            <h4>Enter action link</h4>
-            <input type="text" class="form-control" name="login_page_banner_link" id="login_page_banner_link" value="<?php echo esc_attr( get_option('login_page_banner_link') ); ?>" />
-        </div>
-
-    </div>
     
     <?php submit_button(); ?>
 
@@ -183,14 +154,6 @@ function admin_settings_page() {
     }
     .col{
         display: inline-block;
-    }
-
-    .image-holder {
-        margin-right: 20px;
-        min-width: 100px;
-    }
-    input#login_page_banner_link {
-        min-width: 50%;
     }
 </style>
 <?php 

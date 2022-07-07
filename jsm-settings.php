@@ -80,6 +80,9 @@ require "jsm-engine/create_slides_metabox.php";
 /* ----------- ADDING NEW OPTION PAGE ----------------- */
 require "jsm-engine/create_admin_setting.php";
 
+/* ----------- ADDING NEW OPTION SUBMENU PAGE ----------------- */
+require "jsm-engine/create_promo_setting.php";
+
 /* ----------- ADDING NEW OPTION PAGE ----------------- */
 require "jsm-engine/create_homepage.php";
 
