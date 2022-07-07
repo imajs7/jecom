@@ -190,11 +190,9 @@ function hide_if_logged_out_css() {
 /* --------- HIDE FOR USER BELOW SHOP MANAGER --------- */
 add_action( 'wp_head', 'hide_if_user_not_manager', 500 );
 function hide_if_user_not_manager() {
-	$user = wp_get_current_user();
-	$allowed_roles = array( 'editor', 'administrator', 'author', 'shop_manager' );
-	if ( array_intersect( $allowed_roles, $user->roles ) ) {
-		?><style>.hide_if_user_not_manager { display: none !important;}</style><?php
-	}
+    if ( ! current_user_can( 'edit_post') ) {
+        ?><style>.hide_if_user_not_manager { display: none !important;}</style><?php
+    }
 }
 
 
