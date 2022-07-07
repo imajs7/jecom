@@ -58,7 +58,9 @@ function load_dashicons_front_end() {
 	wp_enqueue_style( 'dashicons' );
 }
  
-// Modify capability for option pages
+/**
+ * Modify capability for option pages
+ * */ 
 function add_capability_for_admin_page( $capability ) {
     return 'manage_woocommerce';
 }
@@ -185,6 +187,15 @@ function hide_if_logged_out_css() {
     }
 }
 
+/* --------- HIDE FOR USER BELOW SHOP MANAGER --------- */
+add_action( 'wp_head', 'hide_if_user_not_manager', 500 );
+function hide_if_user_not_manager() {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        ?><style>.hide_if_user_not_manager { display: none !important;}</style><?php
+    }
+}
+
+
 /**
  * Register Custom Navigation Walker
  */
@@ -223,7 +234,7 @@ function render_woo_login_form( $atts ) {
   add_shortcode( 'jsm-custom-login-form', 'render_woo_login_form' );
 
 /**
- * 
+ * wp media support for banner image
  */
 
 function load_wp_media_files( $page ) {
