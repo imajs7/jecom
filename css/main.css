@@ -11761,6 +11761,12 @@ img.custom-logo {
 }
 
 /* ------------- Woo pages --------------------- */
+.woocommerce ul.products li.product a img {
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .place-order, .payment_methods {
   background-color: #f9f9f9;
   border: #eee solid 2px;
