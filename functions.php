@@ -154,6 +154,7 @@ function jcom_scripts() {
 	wp_enqueue_script( 'bootstrap-script', 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js', array('jquery') );
 	
 	wp_enqueue_script( 'jcom-script', get_template_directory_uri() . '/js/jcom.js', array('jquery') );
+	wp_enqueue_script( 'jcom-stt-script', get_template_directory_uri() . '/js/scroll-to-top.js', array('jquery'), 0, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

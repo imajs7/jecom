@@ -153,8 +153,7 @@ body {
 }
 .wc-setup-content table.tax-rates td.sort::before {
   content: "\f333";
-  font-family: dashicons;
-  /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
+  font-family: dashicons; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
 }
 .wc-setup-content table.tax-rates td.readonly {
   background: #f5f5f5;
@@ -172,8 +171,7 @@ body {
 }
 .wc-setup-content table.tax-rates .add::before {
   content: "\f502";
-  font-family: dashicons;
-  /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
+  font-family: dashicons; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
   position: absolute;
   left: 0;
   top: 0;
@@ -191,8 +189,7 @@ body {
 }
 .wc-setup-content table.tax-rates .remove::before {
   content: "\f182";
-  font-family: dashicons;
-  /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
+  font-family: dashicons; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
   position: absolute;
   left: 0;
   top: 0;
@@ -303,8 +300,7 @@ body {
 }
 .wc-setup-content .wc-setup-next-steps ul li a::before {
   color: #82878c;
-  font: 400 20px/1 dashicons;
-  /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
+  font: 400 20px/1 dashicons; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
   speak: never;
   display: inline-block;
   padding: 0 10px 0 0;
@@ -748,8 +744,7 @@ body {
 }
 .wc-wizard-services-list-toggle .wc-wizard-service-enable::before {
   content: "\f343";
-  font-family: dashicons;
-  /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
+  font-family: dashicons; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
   color: #666;
   font-size: 25px;
   margin-top: -7px;
@@ -1320,18 +1315,15 @@ p.jetpack-terms {
   .wc-logo img {
     max-width: 80%;
   }
-
   .wc-setup-steps {
     display: none;
   }
-
   .store-address-container .city-and-postcode {
     display: block;
   }
   .store-address-container .city-and-postcode div {
     margin-right: 0;
   }
-
   .wc-wizard-service-item,
 .wc-wizard-services-list-toggle {
     flex-wrap: wrap;
@@ -1355,7 +1347,6 @@ p.jetpack-terms {
 .wc-wizard-services-list-toggle .wc-wizard-service-name img {
     margin: 0;
   }
-
   .newsletter-form-container {
     display: block;
   }
@@ -1368,7 +1359,6 @@ p.jetpack-terms {
   .newsletter-form-container .button.newsletter-form-button {
     float: left;
   }
-
   .wc-wizard-next-steps .wc-wizard-next-step-item {
     flex-wrap: wrap;
   }

@@ -1703,7 +1703,6 @@ a.reset_variations {
     display: flex;
     justify-content: flex-end;
   }
-
   .woocommerce table.shop_table_responsive tr,
 .woocommerce-page table.shop_table_responsive tr {
     margin: 0 0 1.5rem;
@@ -1778,14 +1777,12 @@ a.reset_variations {
 .woocommerce-page .woocommerce-ordering {
     margin-bottom: 3rem;
   }
-
   .woocommerce-cart-form table td.product-name {
     padding-left: 0.5em;
   }
   .woocommerce-cart-form table input.qty {
     padding: 1rem 1.5rem;
   }
-
   .woocommerce-checkout form .col2-set {
     width: 100%;
     float: none;
@@ -1812,7 +1809,6 @@ a.reset_variations {
 .woocommerce-checkout form table tfoot .order-total td {
     text-align: end;
   }
-
   .logged-in.woocommerce-account #site-content .woocommerce {
     flex-direction: column;
   }
@@ -1843,7 +1839,6 @@ a.reset_variations {
     font-size: 1.5rem;
     padding: 1rem;
   }
-
   /**
   * Shop page
   */
@@ -1851,14 +1846,12 @@ a.reset_variations {
     font-size: 8.4rem;
     font-weight: 800;
   }
-
   .woocommerce-pagination span.page-numbers,
 .woocommerce-pagination a.page-numbers,
 .woocommerce-pagination .next.page-numbers,
 .woocommerce-pagination .prev.page-numbers {
     padding: 1rem;
   }
-
   /**
   * Account section
   */
@@ -1905,7 +1898,6 @@ a.reset_variations {
     width: 100%;
     margin: 1.5rem 0;
   }
-
   /**
   * Layout stuff
   */
@@ -1916,7 +1908,6 @@ a.reset_variations {
   .woocommerce .content-area .site-main {
     margin: 0;
   }
-
   .single-product .entry .entry-content,
 .single-product .entry .entry-summary {
     max-width: none;
@@ -1927,17 +1918,14 @@ a.reset_variations {
 .single-product .entry .entry-summary > * {
     max-width: none;
   }
-
   .woocommerce-breadcrumb {
     margin-bottom: 5rem;
     font-size: 0.88889em;
     font-family: -apple-system, blinkmacsystemfont, "Helvetica Neue", helvetica, sans-serif;
   }
-
   .woocommerce-product-gallery {
     margin-bottom: 8rem;
   }
-
   .woocommerce-checkout #site-content .woocommerce {
     max-width: 1600px;
     padding: 0 6vw;
@@ -1954,17 +1942,14 @@ a.reset_variations {
     font-size: 1.7rem;
     padding: 1.5rem;
   }
-
   .woocommerce-breadcrumb {
     margin-bottom: 5rem;
     font-size: 0.88889em;
     font-family: -apple-system, blinkmacsystemfont, "Helvetica Neue", helvetica, sans-serif;
   }
-
   .woocommerce-product-gallery {
     margin-bottom: 8rem;
   }
-
   .woocommerce-account table.account-orders-table th,
 .woocommerce-account table.account-orders-table td,
 .woocommerce-account table.account-orders-table td.woocommerce-orders-table__cell-order-actions {

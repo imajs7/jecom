@@ -82,6 +82,14 @@
 	</div>
 </footer>
 
+<button
+        type="button"
+        class="btn btn-danger btn-floating btn-lg"
+        id="btn-back-to-top"
+        >
+	<i class="bi bi-arrow-up"></i>
+</button>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -2612,7 +2612,6 @@ ul.wc_coupon_list_block li:last-child {
     margin: 0;
     display: block;
   }
-
   .post-type-shop_order .wp-list-table td.check-column {
     width: 1em;
   }
@@ -5018,8 +5017,7 @@ img.help_tip {
 }
 .woocommerce_options_panel p.form-field,
 .woocommerce_options_panel fieldset.form-field {
-  padding: 5px 20px 5px 162px !important;
-  /** Padding for aligning labels left - 12px + 150 label width **/
+  padding: 5px 20px 5px 162px !important; /** Padding for aligning labels left - 12px + 150 label width **/
 }
 .woocommerce_options_panel .sale_price_dates_fields .short:first-of-type {
   margin-bottom: 1em;
@@ -6364,7 +6362,6 @@ table.bar_chart tbody td.bars span.alt span {
   #order_data .order_data_column:first-child {
     width: 100%;
   }
-
   .woocommerce_options_panel .description {
     display: block;
     clear: both;
@@ -6378,7 +6375,6 @@ table.bar_chart tbody td.bars span.alt span {
 .woocommerce_options_panel .dimensions_field .wrap {
     width: 80%;
   }
-
   .woocommerce_variations .downloadable_files,
 .woocommerce_options_panel .downloadable_files {
     padding: 0;
@@ -6412,14 +6408,12 @@ table.bar_chart tbody td.bars span.alt span {
 #woocommerce-product-data .wc-tabs-back {
     width: 10%;
   }
-
   #woocommerce-coupon-data .wc-metaboxes-wrapper,
 #woocommerce-coupon-data .woocommerce_options_panel,
 #woocommerce-product-data .wc-metaboxes-wrapper,
 #woocommerce-product-data .woocommerce_options_panel {
     width: 90%;
   }
-
   #woocommerce-coupon-data ul.coupon_data_tabs li a,
 #woocommerce-product-data ul.product_data_tabs li a {
     position: relative;
@@ -6450,18 +6444,15 @@ table.bar_chart tbody td.bars span.alt span {
     height: 39px;
     padding: 0 20px 0 15px;
   }
-
   #wp-excerpt-editor-tools {
     padding-top: 20px;
     padding-right: 15px;
     overflow: hidden;
     margin-bottom: -1px;
   }
-
   #woocommerce-product-data .checkbox {
     width: 25px;
   }
-
   .variations-pagenav {
     float: none;
     text-align: center;
@@ -6477,13 +6468,11 @@ table.bar_chart tbody td.bars span.alt span {
   .variations-pagenav select {
     padding: 0 20px;
   }
-
   .variations-defaults {
     float: none;
     text-align: center;
     margin-top: 10px;
   }
-
   .post-type-product .wp-list-table .column-thumb {
     display: none;
     text-align: left;
@@ -6501,7 +6490,6 @@ table.bar_chart tbody td.bars span.alt span {
   .post-type-product .wp-list-table .toggle-row {
     top: -28px;
   }
-
   .post-type-shop_order .wp-list-table .column-customer_message,
 .post-type-shop_order .wp-list-table .column-order_notes {
     text-align: inherit;
@@ -6525,16 +6513,13 @@ table.bar_chart tbody td.bars span.alt span {
     display: block;
     margin: 0;
   }
-
   .woocommerce_options_panel fieldset.form-field,
 .woocommerce_options_panel p.form-field {
     padding: 5px 20px !important;
   }
-
   .addons-wcs-banner-block {
     flex-direction: column;
   }
-
   .wc_addons_wrap .addons-wcs-banner-block {
     padding: 40px;
   }
@@ -8125,10 +8110,8 @@ table.bar_chart tbody td.bars span.alt span {
 .woocommerce-importer-wrapper .wc-progress-form-content .wc-importer-error-log-table .wc-importer-mapping-table-name .description code {
   background: none;
   padding: 0;
-  white-space: pre-line;
-  /* CSS 3 (and 2.1 as well, actually) */
-  word-wrap: break-word;
-  /* IE */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
   word-break: break-all;
 }
 .woocommerce-progress-form-wrapper .woocommerce-exporter .woocommerce-importer-done,

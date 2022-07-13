@@ -1079,13 +1079,11 @@ table.variations select {
   .has-sidebar.woocommerce-page:not(.error404) #secondary {
     width: 20%;
   }
-
   body.page-two-column.woocommerce-cart:not(.archive) #primary .entry-header,
 body.page-two-column.woocommerce-checkout:not(.archive) #primary .entry-header,
 body.page-two-column.woocommerce-account:not(.archive) #primary .entry-header {
     width: 16%;
   }
-
   body.page-two-column.woocommerce-cart:not(.archive) #primary .entry-content,
 body.page-two-column.woocommerce-checkout:not(.archive) #primary .entry-content,
 body.page-two-column.woocommerce-account:not(.archive) #primary .entry-content {

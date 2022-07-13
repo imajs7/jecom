@@ -370,7 +370,6 @@ div.pp_woocommerce .pp_close::before {
   div.pp_woocommerce .pp_details {
     width: 100% !important;
   }
-
   .pp_content {
     width: 100% !important;
   }
@@ -378,7 +377,6 @@ div.pp_woocommerce .pp_close::before {
     width: 100% !important;
     height: auto !important;
   }
-
   .currentTextHolder {
     line-height: 3;
   }
