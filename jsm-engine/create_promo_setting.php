@@ -31,6 +31,9 @@ function register_promo_settings() {
     register_setting( 'promo-settings-group', 'modal_window_title' );
     register_setting( 'promo-settings-group', 'modal_window_content' );
 
+    register_setting( 'promo-settings-group', 'cart_page_msg_enable' );
+    register_setting( 'promo-settings-group', 'cart_page_msg_text' );
+
 }
 
 function promo_settings_page() {
@@ -51,7 +54,7 @@ function promo_settings_page() {
 
         <img src="<?php echo esc_attr( get_option('login_page_banner_image_link') ); ?>" id="get_login_page_banner_image" width="100" height="100" />
 
-        <h4>Select Image (preferrably sqare image)</h4>
+        <h4>Select Image (preferrably square image)</h4>
         <input type="button" id="login_page_banner_image" value="Select Image" />
 
         <h4>Enter action link</h4>
@@ -72,6 +75,20 @@ function promo_settings_page() {
         
         <label>Modal Window Content</label><br/>
         <textarea style="min-width: 50%" name="modal_window_content"><?php echo esc_attr( get_option('modal_window_content') ); ?></textarea>
+
+    </div>
+
+
+    <br />
+    <hr />
+    <br />
+
+    <h3>Cart Page Message</h3>
+    <div class="cart-page-message">
+        <input type="checkbox" name="cart_page_msg_enable" value="1" <?php checked(1, get_option('cart_page_msg_enable'), true); ?> /><label>Enable cart page message</label><br/><br/>
+        
+        <label>Message Text</label><br/>
+        <input type="text" name="cart_page_msg_text" value="<?php echo esc_attr( get_option('cart_page_msg_text') ); ?>" />
 
     </div>
     

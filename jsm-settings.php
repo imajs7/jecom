@@ -281,3 +281,20 @@ if (isset($_GET['activated']) && is_admin()){
     }
   
 }
+
+/**-------- CART PAGE MESSAGE -------------- */
+add_action('woocommerce_before_cart_contents', 'jsm_cart_page_custom_text');
+ 
+function jsm_cart_page_custom_text() {
+
+	if( get_option('cart_page_msg_enable') ) {
+
+		$message='<div class="justify-content-center"><p align="text-center">';
+		$message.= get_option('cart_page_msg_text');
+		$message.='</p></div>';
+	 
+		echo $message;
+
+	} 
+
+}
