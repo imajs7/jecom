@@ -53,7 +53,8 @@ function jcom_setup() {
 	register_nav_menus(
 		array(
 			'primary' => 'Primary menu',
-			'secondary' => 'Secondary menu'
+			'secondary' => 'Secondary menu',
+			'tertiary' => 'Tertiary Menu'
 		)
 	);
 

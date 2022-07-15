@@ -44,6 +44,8 @@ function register_admin_settings() {
     register_setting( 'admin-settings-group', 'login_page_banner_image_link' );
     register_setting( 'admin-settings-group', 'login_page_banner_link' );
 
+    register_setting( 'admin-settings-group', 'tertiary_menu_enable' );
+
 }
 
 function admin_settings_page() {
@@ -138,6 +140,19 @@ function admin_settings_page() {
             <h4>Twitter Handle</h4>
             <input type="text" name="business_twitter" value="<?php echo esc_attr( get_option('business_twitter') ); ?>" />
         </div>
+    </div>
+
+    <br/>
+    <hr/>
+    
+    <h3>Tertiary Menu</h3>
+    <div class="row">
+
+        <div class="col">
+            <input type="checkbox" name="tertiary_menu_enable" value="1" <?php checked(1, get_option('tertiary_menu_enable'), true); ?> /><label>Show on frontpage</label><br/><br/>
+            <p>Caution: Set the location of a <a href="/wp-admin/nav-menus.php">menu</a> as tertiary menu</p>
+        </div>
+    
     </div>
     
     <?php submit_button(); ?>
