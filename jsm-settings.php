@@ -286,28 +286,26 @@ if (isset($_GET['activated']) && is_admin()){
 add_action('woocommerce_before_cart_contents', 'jsm_cart_page_custom_text');
  
 function jsm_cart_page_custom_text() {
-
 	if( get_option('cart_page_msg_enable') ) {
-
 		$message= get_option('cart_page_msg_text');
 		wc_print_notice( __( $message, 'woocommerce' ), 'notice' );
-
 	} 
-
 }
 
 /** ----------- Notice before Checkout page ---------- */
 add_action( 'woocommerce_before_checkout_form', 'jsm_add_checkout_message', 9 );
 function jsm_add_checkout_message() {
-	$message= get_option('checkout_page_msg_text');
-	wc_print_notice( __( $message, 'woocommerce' ), 'notice' );
+	if( get_option('checkout_page_msg_enable') ) {
+		$message= get_option('checkout_page_msg_text');
+		wc_print_notice( __( $message, 'woocommerce' ), 'notice' );
+	}
 }
 
 /** ----------- Notice before payment board ----------- */
 add_action( 'woocommerce_review_order_before_payment', 'jsm_before_paying_notice' );
 function jsm_before_paying_notice() {
-	
-	$message= get_option('payment_msg_text');
-	wc_print_notice( __( $message, 'woocommerce' ), 'notice' );
-	
+	if( get_option('payment_msg_enable') ) {
+		$message= get_option('payment_msg_text');
+		wc_print_notice( __( $message, 'woocommerce' ), 'notice' );
+	}
 }
