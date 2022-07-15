@@ -389,7 +389,7 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
 add_filter( 'the_title', 'bbloomer_shorten_woo_product_title', 9999, 2 );
 function bbloomer_shorten_woo_product_title( $title, $id ) {
    if ( get_post_type( $id ) === 'product' && strlen($title) > 27 ) {
-      return substr( $title, 0, 25 ) . "..."; // last number = characters
+      return substr( $title, 0, 20 ) . "..."; // last number = characters
    } else {
       return $title;
    }
