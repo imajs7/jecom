@@ -292,8 +292,8 @@ function jsm_cart_page_custom_text() {
 		$message='<div class="justify-content-center"><p align="text-center">';
 		$message.= get_option('cart_page_msg_text');
 		$message.='</p></div>';
-	 
-		echo $message;
+		wc_add_notice(__('Gift Card has expired!', 'rpgiftcards'), 'error');
+		wc_print_notice();
 
 	} 
 
