@@ -34,6 +34,12 @@ function register_promo_settings() {
     register_setting( 'promo-settings-group', 'cart_page_msg_enable' );
     register_setting( 'promo-settings-group', 'cart_page_msg_text' );
 
+    register_setting( 'promo-settings-group', 'checkout_page_msg_enable' );
+    register_setting( 'promo-settings-group', 'checkout_page_msg_text' );
+
+    register_setting( 'promo-settings-group', 'payment_msg_enable' );
+    register_setting( 'promo-settings-group', 'payment_msg_text' );
+
 }
 
 function promo_settings_page() {
@@ -89,6 +95,32 @@ function promo_settings_page() {
         
         <label>Message Text</label><br/>
         <input type="text" name="cart_page_msg_text" value="<?php echo esc_attr( get_option('cart_page_msg_text') ); ?>" />
+
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <h3>Checkout Page Message</h3>
+    <div class="cart-page-message">
+        <input type="checkbox" name="checkout_page_msg_enable" value="1" <?php checked(1, get_option('checkout_page_msg_enable'), true); ?> /><label>Enable cart page message</label><br/><br/>
+        
+        <label>Message Text</label><br/>
+        <input type="text" name="checkout_page_msg_text" value="<?php echo esc_attr( get_option('checkout_page_msg_text') ); ?>" />
+
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <h3>Before Payment Message</h3>
+    <div class="cart-page-message">
+        <input type="checkbox" name="payment_msg_enable" value="1" <?php checked(1, get_option('payment_msg_enable'), true); ?> /><label>Enable cart page message</label><br/><br/>
+        
+        <label>Message Text</label><br/>
+        <input type="text" name="payment_msg_text" value="<?php echo esc_attr( get_option('payment_msg_text') ); ?>" />
 
     </div>
     
