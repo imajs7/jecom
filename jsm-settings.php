@@ -71,6 +71,11 @@ function add_capability_for_build_homepage( $capability ) {
 }
 add_filter( 'option_page_capability_build-homepage-group', 'add_capability_for_build_homepage' );
 
+function add_capability_for_build_testimonial( $capability ) {
+    return 'manage_woocommerce';
+}
+add_filter( 'option_page_capability_build-testimonial-group', 'add_capability_for_build_testimonial' );
+
 /* ------ Custom Slide Custom Post type ----------- */
 require "jsm-engine/create_slides_cpt.php";
 
@@ -85,6 +90,9 @@ require "jsm-engine/create_promo_setting.php";
 
 /* ----------- ADDING NEW OPTION PAGE ----------------- */
 require "jsm-engine/create_homepage.php";
+
+/* ----------- ADDING NEW OPTION PAGE ----------------- */
+require "jsm-engine/create_testimonial.php";
 
 /* ----------- Create custom widgets ----------------- */
 require "jsm-engine/create_custom_widgets.php";

@@ -188,6 +188,9 @@ add_action( 'login_enqueue_scripts', 'jsm_login_enqueue_script', 1 );
  *  admin enqueue css & js 
 */
 function jsm_enqueue_custom_admin_style( $hook ) {
+	if($_GET["page"] != "promo-settings") {
+		return;
+	}
 	wp_enqueue_style('custom_wp_admin_css', get_template_directory_uri() . '/css/admin-style.css', false, '1.0.0');
     wp_enqueue_script('custom_wp_admin_js', get_template_directory_uri() . '/js/admin-style.js', false, '1.0.0');
 }

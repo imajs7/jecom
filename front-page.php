@@ -243,6 +243,23 @@ query_posts(array(
 
 		<?php } ?>
 
+		<!-- Dynamic Section 5 -->
+		<?php if( get_option('testimonial_enable') ) {
+			$section_counter++; 
+			if($section_counter % 2 == 0) {
+				$section_class = "loader-section section-bg-color";
+			} else {
+				$section_class = "container loader-section";
+			}	
+		?>
+		<section class="testimonials <?php echo $section_class ?>">
+
+			<?php include "template-parts/multi-slide-carousel.php"; ?>
+
+		</section>
+
+		<?php } ?>
+
 		<!-- Modal Window -->
 		<?php 
 			if( get_option('modal_window_enable') ) {

@@ -10703,7 +10703,7 @@ img.custom-logo {
 }
 
 /* -------- Box shadow -------- */
-.shadowed-box, .carousel {
+.shadowed-box, .testimonials .card, .carousel {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
@@ -10746,6 +10746,23 @@ img.custom-logo {
   bottom: 20px;
   right: 20px;
   display: none;
+}
+
+/** ----------------- Testimonials ------------------- */
+.testimonials {
+  margin: 30px auto;
+}
+.testimonials .card-img-top {
+  max-width: 100px;
+  border-radius: 50%;
+  margin: 15px auto 0;
+  box-shadow: 0 8px 20px -4px #95abbb;
+  width: 100px;
+  height: 100px;
+}
+.testimonials h5 span, .testimonials .h5 span {
+  font-size: 12px;
+  font-weight: 600;
 }
 
 /* ------------- Woo pages --------------------- */
